@@ -46,6 +46,11 @@ public class KebersihanKelas extends TB {
         }else{
             HasilSuhu = "Tidak Sesuai";
         }
+            
+        super.getSirkulasiUdara();
+        super.getPencahayaan();
+        super.getKelembapan();
+        super.getSuhuCel();
         
     }
     

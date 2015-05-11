@@ -24,6 +24,11 @@ public class JKP extends TB {
     else {
     }
     
+    super.getKondisiStopKontak();
+    super.getJumlahStopKontak();
+    super.getPosisiStopKontak();
+            
+    
     System.out.println("Jumlah Kabel LCD : ");
     int JumlahKabelLCD = input.nextInt();
     data.setJumlahKabelLCD(JumlahKabelLCD);
@@ -40,6 +45,10 @@ public class JKP extends TB {
     else{
     }
     
+    super.getJumlahKabelLCD();
+    super.getKondisiKabelLCD();
+    super.getPosisiLabelLCD();
+    
     System.out.println("Jumlah Kipas : ");
     int JumlahKipas = input.nextInt();
     data.setJumlahKipas(JumlahKipas);
@@ -49,6 +58,17 @@ public class JKP extends TB {
     System.out.println("Posisi Kipas : ");
     String PosisiKipas = input.next();
     data.setPosisiKipas(PosisiKipas);
+    
+    if (data.getJumlahKipas()>=3 && data.getKondisiKipas()
+        .equals("Bagus") && data.getPosisiKipas().equals("Atas")) {
+        return; }
+    else {
+    }
+    
+    super.getJumlahKipas();
+    super.getKondisiKipas();
+    super.getPosisiKipas();
+    
     System.out.println("Jumlah Lampu");
     int JumlahLampu = input.nextInt();
     data.setJumlahLampu(JumlahLampu);
@@ -59,20 +79,17 @@ public class JKP extends TB {
     String PosisiLampu = input.next();
     data.setPosisiLampu(PosisiLampu);
     
-    
-    
     if(data.getJumlahLampu()>=5 && data.getKondisiLampu()
        .equals("Bagus") && data.getPosisiLampu().equals("Atas")) {
         return; }
     else {
     }
 
-    if (data.getJumlahKipas()>=3 && data.getKondisiKipas()
-        .equals("Bagus") && data.getPosisiKipas().equals("Atas")) {
-        return; }
-    else {
-    }
-
+    super.getJumlahLampu();
+    super.getKondisiLampu();
+    super.getPosisiLampu();
+    
+    
     System.out.println("Jumlah AC : ");
     int JumlahAC = input.nextInt();
     data.setJumlahAC(JumlahAC);
@@ -94,7 +111,9 @@ public class JKP extends TB {
     System.out.println("Bandwith : ");
     int Bandwith = input.nextInt();
     kelas.setBandwidth(Bandwith);  
-
+    
+    super.getBandwidth();
+    
     System.out.println("Jumlah CCTV : ");
     int JumlahCCTV = input.nextInt();
     data.setJumlahCCTV(JumlahCCTV);
@@ -109,6 +128,29 @@ public class JKP extends TB {
         return;
         }
     }
+    
+
+    @Override
+    public String getPosisiCCTV() {
+        return super.getPosisiCCTV(); 
+    }
+
+    @Override
+    public String getKondisiCCTV() {
+        return super.getKondisiCCTV(); 
+    }
+
+    @Override
+    public int getJumlahCCTV() {
+        return super.getJumlahCCTV(); 
+    }
+
+    @Override
+    public int getSSID() {
+        return super.getSSID(); 
+    }
+    
+
     
     public void cetakDataKelas(){
         

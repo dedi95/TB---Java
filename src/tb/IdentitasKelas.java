@@ -15,7 +15,8 @@ public class IdentitasKelas extends TB {
         System.out.println("Jurusan : ");
         String Jurusan = input.next();
         kelas.setJurusan(Jurusan);
-    
+        
+        
     }   
     
     public void KondisiKelas() {
@@ -46,6 +47,10 @@ public class IdentitasKelas extends TB {
         if(kelas.getJumlahPintu() >=2) {
     
         }
+        
+        super.getJumlahPintu();
+        super.getJumlahKursi();
+        super.getJumlahJendela();
     }
     
     public void cetakKondisiKelas(){

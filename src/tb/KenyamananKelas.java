@@ -14,6 +14,8 @@ public class KenyamananKelas {
     private String hasilKerusakan;
     private Object Keausan;
     private String hasilKeausan;
+
+    
     
     
     public void KenyamananKelas() {
@@ -71,8 +73,25 @@ public class KenyamananKelas {
         
         return null;
     }
+    
+   
 
+    public KenyamananKelas(String hasilKebisingan, Object Kebisingan, Object Bau, String hasilBau, Object Kebocoran, String hasilKebocoran, Object Kerusakan, String hasilKerusakan, Object Keausan, String hasilKeausan) {
+        this.hasilKebisingan = hasilKebisingan;
+        this.Kebisingan = Kebisingan;
+        this.Bau = Bau;
+        this.hasilBau = hasilBau;
+        this.Kebocoran = Kebocoran;
+        this.hasilKebocoran = hasilKebocoran;
+        this.Kerusakan = Kerusakan;
+        this.hasilKerusakan = hasilKerusakan;
+        this.Keausan = Keausan;
+        this.hasilKeausan = hasilKeausan;
+    }
+        
     KenyamananKelas() {
         throw new UnsupportedOperationException();
     }
-}
+    
+    }
+

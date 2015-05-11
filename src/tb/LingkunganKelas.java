@@ -28,6 +28,12 @@ public class LingkunganKelas extends TB{
         return; }
     else {
     }
+        
+        super.getKondisiLantai();
+        super.getKondisiDinding();
+        super.getKondisiAtap();
+        super.getKondisiPintu();
+        super.getJumlahJendela();
     
     }  
         

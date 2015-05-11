@@ -44,5 +44,18 @@ public class KeamananKelas {
     }
        return null;
     }
+
+    public KeamananKelas() {
+    }
+
+    public KeamananKelas(Object Kekohan, String hasilKekokohan, Object KunciPintuJendela, String hasilKunciPintuJendela, Object Bahaya, String hasilBahaya) {
+        this.Kekohan = Kekohan;
+        this.hasilKekokohan = hasilKekokohan;
+        this.KunciPintuJendela = KunciPintuJendela;
+        this.hasilKunciPintuJendela = hasilKunciPintuJendela;
+        this.Bahaya = Bahaya;
+        this.hasilBahaya = hasilBahaya;
+    }
     
+   
 }
