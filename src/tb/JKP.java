@@ -151,13 +151,9 @@ public class JKP extends TB {
     }
     
 
-    
     public void cetakDataKelas(){
+        
         
     }
 
-    
-
-    
 }
-    

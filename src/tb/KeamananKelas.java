@@ -1,7 +1,7 @@
 package tb;
 import java.util.Scanner;
 
-public class KeamananKelas {
+public class KeamananKelas extends TB{
     Scanner input = new Scanner(System.in);
     TB kelas = new TB();
     private Object Kekohan;
@@ -12,13 +12,13 @@ public class KeamananKelas {
     private String hasilBahaya;
         
     public void KeamananKelas() {
-        System.out.print("Kekokohan : ");
+        System.out.println("Kekokohan : ");
         String Kekokohan = input.next();
         kelas.setKekokohan(Kekokohan);
-        System.out.print("Kunci Pintu dan Jendela : ");
+        System.out.println("Kunci Pintu dan Jendela : ");
         String KunciPintuJendela = input.next();
         kelas.setKunciPintuJendela(KunciPintuJendela);
-        System.out.print("Bahaya : ");
+        System.out.println("Bahaya : ");
         String Bahaya = input.next();
         kelas.setBahaya(Bahaya);
         
@@ -45,9 +45,7 @@ public class KeamananKelas {
        return null;
     }
 
-    public KeamananKelas() {
-    }
-
+    
     public KeamananKelas(Object Kekohan, String hasilKekokohan, Object KunciPintuJendela, String hasilKunciPintuJendela, Object Bahaya, String hasilBahaya) {
         this.Kekohan = Kekohan;
         this.hasilKekokohan = hasilKekokohan;
@@ -56,6 +54,11 @@ public class KeamananKelas {
         this.Bahaya = Bahaya;
         this.hasilBahaya = hasilBahaya;
     }
+
+    public KeamananKelas() {
+        super.getKekokohan();
+        super.getKunciPintuJendela();
+        super.getBahaya();
+    }
     
-   
 }

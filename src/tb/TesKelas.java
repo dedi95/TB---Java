@@ -2,7 +2,7 @@ package tb;
 import java.util.Scanner;
 
 public class TesKelas {
-    public void main (String[] args) {
+    public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
         
         IdentitasKelas id = new IdentitasKelas();
@@ -22,7 +22,7 @@ public class TesKelas {
         lingkung.LingkunganRuangKelas();
        
         
-        System.out.print("Hasil? : ");
+        System.out.println("Hasil? : ");
         String Pilihan = input.next();
     }
 }

@@ -20,10 +20,10 @@ public class IdentitasKelas extends TB {
     }   
     
     public void KondisiKelas() {
-        System.out.print("Masukkan Panjang : ");
+        System.out.println("Masukkan Panjang : ");
         int Panjang = input.nextInt();
         kelas.setPanjang(Panjang);
-        System.out.print("Masukkan Lebar : ");
+        System.out.println("Masukkan Lebar : ");
         int Lebar = input.nextInt();
         kelas.setLebar(Lebar);
 
@@ -33,13 +33,13 @@ public class IdentitasKelas extends TB {
         kelas.setBentukRuang("Persegi Panjang");
         }
 
-        System.out.print("Jumlah Pintu : ");
+        System.out.println("Jumlah Pintu : ");
         int JumlahPintu = input.nextInt();
         kelas.setJumlahPintu(JumlahPintu);
-        System.out.print("Jumlah Kursi : ");
+        System.out.println("Jumlah Kursi : ");
         int JumlahKursi = input.nextInt();
         kelas.setJumlahKursi(JumlahKursi);
-        System.out.print("Jumlah Jendela : ");
+        System.out.println("Jumlah Jendela : ");
         int JumlahJendela = input.nextInt();
         kelas.setJumlahJendela(JumlahJendela);
 

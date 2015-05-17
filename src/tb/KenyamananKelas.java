@@ -1,7 +1,7 @@
 package tb;
 import java.util.Scanner;
 
-public class KenyamananKelas {
+public class KenyamananKelas extends TB{
     Scanner input = new Scanner(System.in);
     TB kelas = new TB();
     private String hasilKebisingan;
@@ -15,23 +15,20 @@ public class KenyamananKelas {
     private Object Keausan;
     private String hasilKeausan;
 
-    
-    
-    
     public void KenyamananKelas() {
-        System.out.print("Kebisingan : ");
+        System.out.println("Kebisingan : ");
         String Kebisingan = input.next();
         kelas.setKebisingan(Kebisingan);        
-        System.out.print("Bau : ");
+        System.out.println("Bau : ");
         String Bau = input.next();
         kelas.setBau(Bau);
-        System.out.print("Kebocoran : ");
+        System.out.println("Kebocoran : ");
         String Kebocoran = input.next();
         kelas.setKebocoran(Kebocoran);
-        System.out.print("Kerusakan : ");
+        System.out.println("Kerusakan : ");
         String Kerusakan = input.next();
         kelas.setKerusakan(Kerusakan);
-        System.out.print("Keausan : ");
+        System.out.println("Keausan : ");
         String Keausan = input.next();
         kelas.setKeausan(Keausan);
 
@@ -74,9 +71,7 @@ public class KenyamananKelas {
         return null;
     }
     
-   
-
-    public KenyamananKelas(String hasilKebisingan, Object Kebisingan, Object Bau, String hasilBau, Object Kebocoran, String hasilKebocoran, Object Kerusakan, String hasilKerusakan, Object Keausan, String hasilKeausan) {
+   public KenyamananKelas(String hasilKebisingan, Object Kebisingan, Object Bau, String hasilBau, Object Kebocoran, String hasilKebocoran, Object Kerusakan, String hasilKerusakan, Object Keausan, String hasilKeausan) {
         this.hasilKebisingan = hasilKebisingan;
         this.Kebisingan = Kebisingan;
         this.Bau = Bau;
@@ -90,7 +85,11 @@ public class KenyamananKelas {
     }
         
     KenyamananKelas() {
-        throw new UnsupportedOperationException();
+        super.getKebisingan();
+        super.getBau();
+        super.getKebocoran();
+        super.getKerusakan();
+        super.getKeausan();
     }
     
     }

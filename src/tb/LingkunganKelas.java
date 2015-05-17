@@ -29,6 +29,7 @@ public class LingkunganKelas extends TB{
     else {
     }
         
+    
         super.getKondisiLantai();
         super.getKondisiDinding();
         super.getKondisiAtap();
@@ -37,8 +38,4 @@ public class LingkunganKelas extends TB{
     
     }  
         
-
-    LingkunganKelas() {
-        throw new UnsupportedOperationException(); 
-    }
 }

@@ -13,6 +13,7 @@ public class KebersihanKelas extends TB {
         System.out.println("Sirkulasi Udara : ");
         String SirkulasiUdara = input.next();
         kelas.setSirkulasiUdara(SirkulasiUdara);
+        
         if(SirkulasiUdara.equals("Bersih")){
         hasilSirkulasiUdara = "Sesuai";
         }
@@ -23,6 +24,7 @@ public class KebersihanKelas extends TB {
         System.out.println("Pencahayaan : ");
         int Pencahayaan = input.nextInt();
         kelas.setPencahayaan(Pencahayaan);
+        
         if (Pencahayaan >=250 && Pencahayaan <=350){
             HasilCahaya = "Sesuai";
         }else{
@@ -32,6 +34,7 @@ public class KebersihanKelas extends TB {
         System.out.println("Kelembapan : ");
         int Kelembapan = input.nextInt();
         kelas.setKelembapan(Kelembapan);
+        
         if(Kelembapan >= 70 && Kelembapan<=80){
             HasilLembab ="Sesuai";
         }else{
@@ -40,7 +43,8 @@ public class KebersihanKelas extends TB {
         
         System.out.println("Suhu(Celcius) : ");
         int SuhuCel = input.nextInt();
-        kelas.setSuhuCel(SuhuCel);       
+        kelas.setSuhuCel(SuhuCel);  
+        
         if(Kelembapan >= 25 && Kelembapan <=35){
             HasilSuhu ="Sesuai";
         }else{

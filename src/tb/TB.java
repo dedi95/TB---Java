@@ -434,6 +434,4 @@ public class TB {
         this.Bahaya = Bahaya;
     }
 
-    
-
 }
