@@ -8,13 +8,6 @@ public interface Ruang {
     void AC();
     void CCTV();
     void Pintu();
-
-    @Override
-    public String toString();
-
-    @Override
-    public boolean equals(Object obj);
-
-    @Override
-    public int hashCode();
+    void Jendela();
+    
 }

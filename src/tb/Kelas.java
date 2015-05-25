@@ -22,5 +22,9 @@ public abstract class Kelas implements Ruang {
 
     @Override
     public abstract void StopKontak();
+
+    @Override
+    public abstract void Jendela();
+    
     
 }
