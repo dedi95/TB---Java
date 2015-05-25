@@ -1,6 +1,7 @@
 package tb;
-
+import java.util.Scanner;
 abstract class KelasUtama {
+    Scanner input = new Scanner(System.in);
     
     public void Posisi(){
         System.out.println("Posisi");

@@ -6,7 +6,7 @@ public class JKP extends TB {
     TB kelas = new TB();
     JKP data = new JKP() {};
     
-    //inheritance his a tes
+    //inheritance has a tes
     //overiding perbaiki
     
     public void JmlhKondisiSarana(){

@@ -1,7 +1,8 @@
 package tb;
+import java.util.Scanner;
 
 public class Polimorfisme extends KelasUtama {
-    
+    Scanner input = new Scanner(System.in);
     class DepanCCTV extends KelasUtama{
     public void Posisi(){
         System.out.println("Depan");

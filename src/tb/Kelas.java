@@ -3,28 +3,43 @@ package tb;
 public abstract class Kelas implements Ruang {
 
     @Override
-    public abstract void Pintu();
+    public void Pintu(){
+        System.out.println("Pintu");
+    }
 
     @Override
-    public abstract void CCTV();
+    public void CCTV(){
+        System.out.println("CCTV");
+    }
 
     @Override
-    public abstract void AC();
+    public void AC(){
+        System.out.println("AC");
+    }
 
     @Override
-    public abstract void Lampu();
+    public void Lampu(){
+        System.out.println("Lampu");
+    }
 
     @Override
-    public abstract void Kipas();
+    public void Kipas(){
+        System.out.println("Kipas");
+    }
 
     @Override
-    public abstract void KabelLCD();
+    public void KabelLCD(){
+        System.out.println("Kabel LCD");
+    }
 
     @Override
-    public abstract void StopKontak();
+    public void StopKontak(){
+        System.out.println("Stop Kontak");
+    }
 
     @Override
-    public abstract void Jendela();
-    
+    public void Jendela(){
+        System.out.println("Jendela");
+    }
     
 }
