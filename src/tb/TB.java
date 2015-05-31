@@ -433,16 +433,44 @@ public class TB {
     public void setBahaya(String Bahaya) {
         this.Bahaya = Bahaya;
     }
-    public void setdata(String bahaya,String kekohoan){
+    
+    
+    
+    
+    
+    
+    public void setdata(String Bahaya,String Kekokohan){
         this.Bahaya=Bahaya;
         this.Kekokohan=Kekokohan;
     }
-    public void setdata(String bahaya,String kekohoan,String kerusakan){
+    void setdata(String Bahaya,String Kekokohan,String KuciPintuJendela){
         this.Bahaya=Bahaya;
         this.Kekokohan=Kekokohan;
-        this.Kerusakan=kerusakan;
+        this.KunciPintuJendela=KuciPintuJendela;
     }
     
+    void setdata(String SirkulasiUdara, int Pencahayaan, int Kelembapan) {
+        this.SirkulasiUdara=SirkulasiUdara;
+        this.Pencahayaan=Pencahayaan;
+        this.Kelembapan=Kelembapan;
+    }
+    void setdata(String SirkulasiUdara, int Pencahayaan, int Kelembapan, int SuhuCel) {
+        this.SirkulasiUdara=SirkulasiUdara;
+        this.Pencahayaan=Pencahayaan;
+        this.Kelembapan=Kelembapan;
+        this.SuhuCel=SuhuCel;
+    }
     
-
+    void setfile(String Bau, String Kebisingan, String Kebocoran) {
+        this.Bau=Bau;
+        this.Kebisingan=Kebisingan;
+        this.Kebocoran=Kebocoran;
+    }
+    void setfile(String Bau, String Kebisingan, String Kebocoran, String Kerusakan, String Keausan) {
+        this.Bau=Bau;
+        this.Kebisingan=Kebisingan;
+        this.Kebocoran=Kebocoran;
+        this.Kerusakan=Kerusakan;
+        this.Keausan=Keausan;
+    }
 }

@@ -89,15 +89,18 @@ public class KenyamananKelas extends TB{
         super.setKebisingan(Kebisingan);
         return;
     }
+
     
-    
-    void setdata(String Bau, String Kebocoran, String Kebisingan, String Kerusakan, String Keausan) {
+    void setfile(String Bau, String Kebisingan, String Kebocoran, String Kerusakan, String Keausan) {
         this.Bau=Bau;
-        this.Kebocoran=Kebocoran;
         this.Kebisingan=Kebisingan;
+        this.Kebocoran=Kebocoran;
         this.Kerusakan=Kerusakan;
         this.Keausan=Keausan;
-        
+        super.setfile(Bau, Kebisingan, Kebocoran, Kerusakan, Keausan); 
     }
+    
+    
+    
 }
 

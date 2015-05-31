@@ -74,13 +74,16 @@ public class KebersihanKelas extends TB {
         super.setSirkulasiUdara(SirkulasiUdara); 
         return;
     }
+
     
-    public void setData(String SirkulasiUdara, int Pencahayaan, int Kelembapan, int SuhuCel) {
+    void setdata(String SirkulasiUdara, int Pencahayaan, int Kelembapan, int SuhuCel) {
         this.SirkulasiUdara=SirkulasiUdara;
         this.Pencahayaan=Pencahayaan;
         this.Kelembapan=Kelembapan;
         this.SuhuCel=SuhuCel;
-        
+        super.setdata(SirkulasiUdara, Pencahayaan, Kelembapan, SuhuCel); 
     }
+    
+    
        
 }
