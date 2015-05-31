@@ -9,7 +9,7 @@ public class TB {
     private String BentukRuang;
     private int JumlahPintu;
     private int JumlahKursi;
-    private int JumlahJendela;
+    int JumlahJendela;
     int JumlahStopKontak;
     String KondisiStopKontak;
     String PosisiStopKontak;

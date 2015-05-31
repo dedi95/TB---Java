@@ -52,6 +52,9 @@ public class IdentitasKelas extends TB {
         super.getJumlahKursi();
         super.getJumlahJendela();
     }
+
+    
+    
     
     
 }

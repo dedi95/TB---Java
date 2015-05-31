@@ -1,13 +1,13 @@
 package tb;
 
 public interface Ruang {
-    public abstract void StopKontak();
-    public abstract void KabelLCD();
-    public abstract void Kipas();
-    public abstract void Lampu();
-    public abstract void AC();
-    public abstract void CCTV();
-    public abstract void Pintu();
-    public abstract void Jendela();
+    abstract void StopKontak();
+    abstract void KabelLCD();
+    abstract void Kipas();
+    abstract void Lampu();
+    abstract void AC();
+    abstract void CCTV();
+    abstract void Pintu();
+    abstract void Jendela();
     
 }

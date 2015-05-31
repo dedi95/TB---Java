@@ -1,7 +1,7 @@
 package tb;
 import java.util.Scanner;
 
-public class Polimorfisme extends KelasUtama {
+abstract class Polimorfisme extends KelasUtama implements Ruang{
     Scanner input = new Scanner(System.in);
     class DepanCCTV extends KelasUtama{
     public void Posisi(){
@@ -26,12 +26,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class JumlahCCTV extends KelasUtama{
@@ -41,12 +41,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class KondisiCCTV extends KelasUtama{
@@ -56,12 +56,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class PosisiCCTV extends KelasUtama{
@@ -71,12 +71,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     class JumlahStopKontak extends KelasUtama{
@@ -86,12 +86,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class KondisiStopKontak extends KelasUtama{
@@ -101,12 +101,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah();
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
         
     }
@@ -117,12 +117,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah();
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     class JumlahKabelLCD extends KelasUtama{
@@ -132,12 +132,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class KondisiKabelLCD extends KelasUtama{
@@ -147,12 +147,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class PosisiKabelLCD extends KelasUtama{
@@ -162,12 +162,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     class JumalahKipas extends KelasUtama{
@@ -177,12 +177,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi();
         }
     }
     class KondisiKipas extends KelasUtama{
@@ -192,12 +192,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class PosisiKipas extends KelasUtama{
@@ -207,12 +207,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     class JumlahLampu extends KelasUtama{
@@ -222,12 +222,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class KondisiLampu extends KelasUtama{
@@ -237,12 +237,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class PosisiLampu extends KelasUtama{
@@ -252,12 +252,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     class JumlahAC extends KelasUtama{
@@ -267,12 +267,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi();
         }
     }
     class KondisiAC extends KelasUtama{
@@ -282,12 +282,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Posisi() {
-            super.Posisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Posisi(); 
         }
     }
     class PosisiAC extends KelasUtama{
@@ -297,12 +297,12 @@ public class Polimorfisme extends KelasUtama {
 
         @Override
         public void Jumlah() {
-            super.Jumlah(); //To change body of generated methods, choose Tools | Templates.
+            super.Jumlah(); 
         }
 
         @Override
         public void Kondisi() {
-            super.Kondisi(); //To change body of generated methods, choose Tools | Templates.
+            super.Kondisi(); 
         }
     }
     
