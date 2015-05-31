@@ -5,92 +5,99 @@ public class KenyamananKelas extends TB{
     Scanner input = new Scanner(System.in);
     TB kelas = new TB();
     private String hasilKebisingan;
-    private Object Kebisingan;
-    private Object Bau;
+    private String Kebisingan;
+    private String Bau;
     private String hasilBau;
-    private Object Kebocoran;
+    private String Kebocoran;
     private String hasilKebocoran;
-    private Object Kerusakan;
+    private String Kerusakan;
     private String hasilKerusakan;
-    private Object Keausan;
+    private String Keausan;
     private String hasilKeausan;
 
     public void KenyamananKelas() {
-        System.out.println("Kebisingan : ");
+        System.out.println("Masukkan Bising : ");
         String Kebisingan = input.next();
+        System.out.println("Kebisingan = "+Kebisingan);
         kelas.setKebisingan(Kebisingan);        
-        System.out.println("Bau : ");
+        System.out.println("Masukkan Bau : ");
         String Bau = input.next();
+        System.out.println("Bau = "+Bau);
         kelas.setBau(Bau);
-        System.out.println("Kebocoran : ");
+        System.out.println("Masukkan Bocor : ");
         String Kebocoran = input.next();
+        System.out.println("Kebocoran = "+Kebocoran);
         kelas.setKebocoran(Kebocoran);
-        System.out.println("Kerusakan : ");
+        System.out.println("Masukkan Rusak : ");
         String Kerusakan = input.next();
+        System.out.println("Kerusakan = "+Kerusakan);
         kelas.setKerusakan(Kerusakan);
-        System.out.println("Keausan : ");
+        System.out.println("Masukkan Keausan : ");
         String Keausan = input.next();
+        System.out.println("Keausan = "+Keausan);
         kelas.setKeausan(Keausan);
 
     }
     
-    public String analisaKebisingan(){
-        if(Kebisingan.equals("Tidak Sesuai")){
-            hasilKebisingan ="Sesuai";
-        }
-        return analisaKebisingan();
-    }
-    
-    public String analisaBau(){
-        if(Bau.equals("Tidak Sesuai")){
-            hasilBau = "Sesuai";
-        }
-        return analisaBau();
-    }
-    
-    public String analisaKebocoran(){
-        
-        if(Kebocoran.equals("Sesuai")){
-            hasilKebocoran = "Tidak Bocor";
-        }
-        return analisaKebocoran();
-    }
-    
-    public String analisaKerusakan(){
-        if(Kerusakan.equals("Tidak Rusak")){
-            hasilKerusakan = "Sesuai";
-        }
-        return analisaKerusakan();
-    }
-    
-    public String analisaKeausan(){
+
+    @Override
+    public void setKeausan(String Keausan) {
+        this.Keausan=Keausan;
         if(Keausan.equals("Tidak Aus")){
             hasilKeausan = "Aus";
         }
-        
-        return analisaKeausan();
+        super.setKeausan(Keausan); 
+        return;
+    }
+
+    @Override
+    public void setKerusakan(String Kerusakan) {
+        this.Kerusakan=Kerusakan;
+        if(Kerusakan.equals("Tidak Rusak")){
+            hasilKerusakan = "Sesuai";
+        }
+        super.setKerusakan(Kerusakan); 
+        return;
+    }
+
+    @Override
+    public void setKebocoran(String Kebocoran) {
+        this.Kebocoran=Kebocoran;
+        if(Kebocoran.equals("Sesuai")){
+            hasilKebocoran = "Tidak Bocor";
+        }
+        super.setKebocoran(Kebocoran); 
+        return;
+    }
+
+    @Override
+    public void setBau(String Bau) {
+        this.Bau=Bau;
+        if(Bau.equals("Tidak Sesuai")){
+            hasilBau = "Sesuai";
+        }
+        super.setBau(Bau); 
+        return;
+    }
+
+    @Override
+    public void setKebisingan(String Kebisingan) {
+        this.Kebisingan=Kebisingan;
+        if(Kebisingan.equals("Tidak Sesuai")){
+            hasilKebisingan ="Sesuai";
+        }
+        super.setKebisingan(Kebisingan);
+        return;
     }
     
-   public KenyamananKelas(String hasilKebisingan, Object Kebisingan, Object Bau, String hasilBau, Object Kebocoran, String hasilKebocoran, Object Kerusakan, String hasilKerusakan, Object Keausan, String hasilKeausan) {
-        this.hasilKebisingan = hasilKebisingan;
-        this.Kebisingan = Kebisingan;
-        this.Bau = Bau;
-        this.hasilBau = hasilBau;
-        this.Kebocoran = Kebocoran;
-        this.hasilKebocoran = hasilKebocoran;
-        this.Kerusakan = Kerusakan;
-        this.hasilKerusakan = hasilKerusakan;
-        this.Keausan = Keausan;
-        this.hasilKeausan = hasilKeausan;
-    }
-        
-    KenyamananKelas() {
-        super.getKebisingan();
-        super.getBau();
-        super.getKebocoran();
-        super.getKerusakan();
-        super.getKeausan();
-    }
     
+    void setdata(String Bau, String Kebocoran, String Kebisingan, String Kerusakan, String Keausan) {
+        this.Bau=Bau;
+        this.Kebocoran=Kebocoran;
+        this.Kebisingan=Kebisingan;
+        this.Kerusakan=Kerusakan;
+        this.Keausan=Keausan;
+        
     }
+}
 

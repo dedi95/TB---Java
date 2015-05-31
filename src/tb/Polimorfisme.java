@@ -7,7 +7,7 @@ public class Polimorfisme extends KelasUtama {
     public void Posisi(){
         System.out.println("Depan");
     }
-   
+ 
         @Override
         public void Jumlah() {
             super.Jumlah();

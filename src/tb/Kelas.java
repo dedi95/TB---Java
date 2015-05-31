@@ -42,4 +42,6 @@ public abstract class Kelas implements Ruang {
         System.out.println("Jendela");
     }
     
+    
+    
 }

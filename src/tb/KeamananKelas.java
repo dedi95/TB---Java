@@ -4,7 +4,9 @@ import java.util.Scanner;
 public class KeamananKelas extends TB {
     Scanner input = new Scanner(System.in);
     TB kelas = new TB();
-    private Object Kekohan;
+
+    
+    private Object Kekokohan;
     private String hasilKekokohan;
     private Object KunciPintuJendela;
     private String hasilKunciPintuJendela;
@@ -23,42 +25,47 @@ public class KeamananKelas extends TB {
         kelas.setBahaya(Bahaya);
         
     }
-    
-    public String analisaKekokohan(){
-        if(Kekohan.equals("Kokoh")){
+
+    @Override
+    public void setKekokohan(String Kekokohan) {
+        this.Kekokohan=Kekokohan;
+        if(Kekokohan.equals("Kokoh")){
             hasilKekokohan = "Sesuai";
-    }    
-        return analisaKekokohan();
     }
+        super.setKekokohan(Kekokohan); 
+        return;
+    }  
+
     
-    public String analisaKunciPintuJendela(){
+    @Override
+    public void setKunciPintuJendela(String KunciPintuJendela) {
+        this.KunciPintuJendela=KunciPintuJendela;
+        this.hasilKunciPintuJendela=hasilKunciPintuJendela;
         if (KunciPintuJendela.equals("Tidak Sesuai")){
             hasilKunciPintuJendela = "Sesuai";
     }
-        return analisaKunciPintuJendela();
+        super.setKunciPintuJendela(KunciPintuJendela);
+        return;
     }
     
-    public String analisaBahaya(){
+
+    @Override
+    public void setBahaya(String Bahaya) {
+        this.Bahaya=Bahaya;
+        this.hasilBahaya=hasilBahaya;
         if(Bahaya.equals("Aman")){
             hasilBahaya = "Sesuai";
     }
-       return analisaBahaya();
-    }
+        super.setBahaya(Bahaya);
+        return;
+    }   
 
     
-    public KeamananKelas(Object Kekohan, String hasilKekokohan, Object KunciPintuJendela, String hasilKunciPintuJendela, Object Bahaya, String hasilBahaya) {
-        this.Kekohan = Kekohan;
-        this.hasilKekokohan = hasilKekokohan;
-        this.KunciPintuJendela = KunciPintuJendela;
-        this.hasilKunciPintuJendela = hasilKunciPintuJendela;
-        this.Bahaya = Bahaya;
-        this.hasilBahaya = hasilBahaya;
-    }
-
-    public KeamananKelas() {
-        super.getKekokohan();
-        super.getKunciPintuJendela();
-        super.getBahaya();
+    public void setdata(String Bahaya, String Kekokohan, String Kerusakan) {
+        this.Bahaya=Bahaya;
+        this.Kekokohan=Kekokohan;
+        this.Kerusakan=Kerusakan;
+        super.setdata(Bahaya, Kekokohan, Kerusakan); 
     }
     
 }

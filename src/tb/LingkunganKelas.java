@@ -22,18 +22,19 @@ public class LingkunganKelas extends TB{
         String KondisiJendela = input.next();
         kelas.setKondisiJendela(KondisiJendela);
 
-    if(kelas.getKondisiLantai().equals("Bersih") && kelas.getKondisiDinding()
+    if(kelas.getKondisiLantai().equals("Bersih") && kelas.getKondisiDinding() 
         .equals("Bersih") && kelas.getKondisiAtap().equals("Bersih") && kelas.getKondisiAtap()
         .equals("Bersih") && kelas.getKondisiPintu().equals("Bersih") && kelas.getKondisiJendela().equals("Bersih")) {
-        return; }
-    else {}}
+        return; 
+    }
+        else {}}
     
     public void LingkuangKelas(String KondisiLantai,String KondisiDinding,String KondisiAtap,String KondisiPintu,String KondisiJendela){
-    this.KondisiLantai=KondisiLantai;
-    this.KondisiDinding=KondisiDinding;
-    this.KondisiAtap=KondisiAtap;
-    this.KondisiPintu=KondisiPintu;
-    this.KondisiJendela=KondisiJendela;
+        this.KondisiLantai=KondisiLantai;
+        this.KondisiDinding=KondisiDinding;
+        this.KondisiAtap=KondisiAtap;
+        this.KondisiPintu=KondisiPintu;
+        this.KondisiJendela=KondisiJendela; 
     
     }
    LingkunganKelas(){
