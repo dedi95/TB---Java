@@ -1,60 +1,44 @@
 package tb;
 import java.util.Scanner;
 
-public class IdentitasKelas extends TB {
+public class IdentitasKelas {
     Scanner input = new Scanner(System.in);
-    TB kelas = new TB();
+    TB data = new TB();
     
     public void IdentitasRuangKelas() {
         System.out.println("Nama Ruangan : ");
-        String NamaRuangan = input.next();
-        kelas.setNamaRuangan(NamaRuangan);
+        data.setNamaRuangan(input.nextInt());
         System.out.println("Lokasi : ");
-        String LokasiRuangan = input.next();
-        kelas.setLokasiRuangan(LokasiRuangan);
+        data.setLokasiRuangan(input.next());
         System.out.println("Jurusan : ");
-        String Jurusan = input.next();
-        kelas.setJurusan(Jurusan);
-        
+        data.setJurusan(input.next());
         
     }   
     
-    public void KondisiKelas() {
-        System.out.println("Masukkan Panjang : ");
-        int Panjang = input.nextInt();
-        kelas.setPanjang(Panjang);
-        System.out.println("Masukkan Lebar : ");
-        int Lebar = input.nextInt();
-        kelas.setLebar(Lebar);
-
-        kelas.setLuas(kelas.getPanjang() * kelas.getLebar());
-
-        if (Panjang == Lebar) {
-        kelas.setBentukRuang("Persegi Panjang");
-        }
-
-        System.out.println("Jumlah Pintu : ");
-        int JumlahPintu = input.nextInt();
-        kelas.setJumlahPintu(JumlahPintu);
-        System.out.println("Jumlah Kursi : ");
-        int JumlahKursi = input.nextInt();
-        kelas.setJumlahKursi(JumlahKursi);
-        System.out.println("Jumlah Jendela : ");
-        int JumlahJendela = input.nextInt();
-        kelas.setJumlahJendela(JumlahJendela);
-
-        kelas.setRasioLuas(kelas.getLuas() / kelas.getJumlahJendela());
-        if(kelas.getJumlahPintu() >=2) {
-    
+    public int KondisiKelas() {
+        System.out.println("Masukkan Panjang Ruangan : ");
+        data.setPanjang(input.nextInt());
+        System.out.println("Masukkan Lebar Ruangan : ");
+        data.setLebar(input.nextInt());
+        System.out.println("Masukkan Jumlah Pintu : ");
+        data.setJumlahPintu(input.nextInt());
+        System.out.println("Masukkan Jumlah Kursi : ");
+        data.setJumlahPintu(input.nextInt());
+        System.out.println("Masukkan Jumlah Jendela : ");
+        data.setJumlahJendela(input.nextInt());
+        
+        return 0;
+    }
+        public void cetakData() {
+            System.out.println("Luas = "+Luas());
+            System.out.println("Rasio Luas = "+RasioLuas());
         }
         
-        super.getJumlahPintu();
-        super.getJumlahKursi();
-        super.getJumlahJendela();
-    }
-
-    
-    
-    
-    
-}
+        float Luas() {
+            return data.getPanjang()*data.getLebar();
+	}
+	
+        double RasioLuas(){
+            return Luas()/data.getJumlahKursi();
+        }
+}    

@@ -5,8 +5,8 @@ public class TesKelas {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
         
+        TB kelas = new TB();
         IdentitasKelas id = new IdentitasKelas();
-        JKP jkp = new JKP();
         KeamananKelas aman = new KeamananKelas();
         KebersihanKelas bersih = new KebersihanKelas();
         KenyamananKelas nyaman = new KenyamananKelas();
@@ -14,14 +14,18 @@ public class TesKelas {
         
         id.IdentitasRuangKelas();
         id.KondisiKelas();
-        jkp.JmlhKondisiSarana();
-        aman.KeamananKelas();
+        id.cetakData();
+        aman.Save();
+        aman.Input();
+        aman.View();
+        
+        /*aman.KeamananKelas();
         bersih.KebersihanRuangKelas();
         nyaman.KenyamananKelas();
         lingkung.LingkunganRuangKelas();
-       
+       */
         
-        System.out.println("Hasil? : ");
+        System.out.println("Hasil  : ");
         String Pilihan = input.next();
     }
 }
