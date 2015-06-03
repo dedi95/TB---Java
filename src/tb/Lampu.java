@@ -35,7 +35,7 @@ public class Lampu implements JumlahKondisiSarana{
 	
 	@Override
 	public int analisisJumlah() {
-		System.out.println("masukkan jumlah Lampu : ");
+		System.out.println("Masukkan Jumlah Lampu : ");
 		Jumlah = input.nextInt();
 		if(Jumlah >= 18){
 			return 1;
@@ -47,9 +47,9 @@ public class Lampu implements JumlahKondisiSarana{
 
 	@Override
 	public int analisisKondisi() {
-		System.out.println("masukkan kondisi Lampu : ");
+		System.out.println("Masukkan Kondisi Lampu : ");
 		Posisi = input.next();
-		if(Kondisi.equals("baik")&& Jumlah == 18){
+		if(Kondisi.equals("Baik")&& Jumlah == 18){
 			return 1;
 		}
 		else{
@@ -59,9 +59,9 @@ public class Lampu implements JumlahKondisiSarana{
 
 	@Override
 	public int analisisPosisi() {
-		System.out.println("masukkan posisi Lampu : ");
+		System.out.println("Masukkan Posisi Lampu : ");
 		Posisi = input.next();
-		if(Posisi.equals("atap_ruangan")){
+		if(Posisi.equals("Atas")){
 			return 1; 
 		}
 		else{
@@ -70,9 +70,9 @@ public class Lampu implements JumlahKondisiSarana{
 	}
 
 	public void tampil() {
-		System.out.println("jumlah Lampu : "+Jumlah);
-		System.out.println("kondisi Lampu : "+Kondisi);
-		System.out.println("posisi Lampu : "+Posisi);
+		System.out.println("Jumlah Lampu : "+Jumlah);
+		System.out.println("Kondisi Lampu : "+Kondisi);
+		System.out.println("Posisi Lampu : "+Posisi);
 	}
         
         public void simpan(){

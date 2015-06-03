@@ -35,7 +35,7 @@ Scanner input = new Scanner(System.in);
     
     @Override
     public int analisisJumlah() {
-System.out.println("masukkan jumlah CCTV : ");
+System.out.println("Masukkan Jumlah CCTV : ");
 		Jumlah = input.nextInt();
 		if(Jumlah == 2){
 			return 1;
@@ -47,7 +47,7 @@ System.out.println("masukkan jumlah CCTV : ");
 
     @Override
     public int analisisKondisi() {
-    System.out.println("masukkan kondisi CCTV : ");
+    System.out.println("Masukkan Kondisi CCTV : ");
 		Kondisi = input.next();
 		if(Kondisi.equals("baik") && Jumlah == 2){
 			return 1;
@@ -59,7 +59,7 @@ System.out.println("masukkan jumlah CCTV : ");
 
     @Override
     public int analisisPosisi() {	
-        System.out.println("masukkan posisi CCTV : ");
+        System.out.println("Masukkan Posisi CCTV : ");
 		Posisi = input.next();
 		if(Posisi.equals("depan_dan_belakang")){
 			return 1;
@@ -71,9 +71,9 @@ System.out.println("masukkan jumlah CCTV : ");
       }
     
 	public void tampil() {
-		System.out.println("jumlah CCTV : "+Jumlah);
-		System.out.println("kondisi CCTV : "+Kondisi);
-		System.out.println("posisi CCTV : "+Posisi);	
+		System.out.println("Jumlah CCTV : "+Jumlah);
+		System.out.println("Kondisi CCTV : "+Kondisi);
+		System.out.println("Posisi CCTV : "+Posisi);	
 	}
         
         public void simpan(){

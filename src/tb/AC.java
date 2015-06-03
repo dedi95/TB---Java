@@ -35,8 +35,8 @@ public class AC implements JumlahKondisiSarana {
     
     @Override
     public int analisisJumlah() {
-        System.out.println("masukkan jumlah AC : ");
-       Jumlah = input.nextInt();
+        System.out.println("Masukkan Jumlah AC : ");
+        Jumlah = input.nextInt();
 		if(Jumlah >= 1){
 			return 1;
 		}
@@ -47,9 +47,9 @@ public class AC implements JumlahKondisiSarana {
 
     @Override
     public int analisisKondisi() {
-        System.out.println("masukkan kondisi AC : ");
-       Kondisi = input.next();
-		if(Kondisi.equals("baik")){
+        System.out.println("Masukkan Kondisi AC : ");
+        Kondisi = input.next();
+		if(Kondisi.equals("Baik")){
 			return 1;
 		}
 		else{
@@ -59,9 +59,9 @@ public class AC implements JumlahKondisiSarana {
     
     @Override
     public int analisisPosisi() {
-        System.out.println("masukkan posisi AC : ");
+        System.out.println("Masukkan Posisi AC : ");
         Posisi = input.next();
-                if(Posisi.equals("sesuai")){
+                if(Posisi.equals("Sesuai")){
                         return 1;
                 }
                 else{
@@ -70,9 +70,9 @@ public class AC implements JumlahKondisiSarana {
     }
    
     public void tampilan(){
-        System.out.println("masukkan jumlah AC "+Jumlah);
-        System.out.println("masukkan kondisi AC"+Kondisi);
-        System.out.println("masukkan posisi AC"+Posisi);
+        System.out.println("Masukkan Jumlah AC "+Jumlah);
+        System.out.println("Masukkan Kondisi AC"+Kondisi);
+        System.out.println("Masukkan Posisi AC"+Posisi);
     }
     
     public void save(){

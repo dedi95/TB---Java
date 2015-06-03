@@ -83,35 +83,35 @@ public class LingkunganKelas extends KelasUtama{
 
     @Override
     void Analisa() {
-                if(Lantai.equals("bersih")){
-			System.out.println("kondisi lantai SESUAI");
+                if(Lantai.equals("Bersih")){
+			System.out.println("Kondisi Lantai SESUAI");
 		}
 		else{
-			System.out.println("kondisi lantai TIDAK SESUAI");
+			System.out.println("Kondisi Lantai TIDAK SESUAI");
 		}
-		if(Dinding.equals("bersih")){
+		if(Dinding.equals("Bersih")){
 			System.out.println("kondisi dinding SESUAI");
 		}
 		else{
-			System.out.println("kondisi dinding TIDAK SESUAI");
+			System.out.println("Kondisi Dinding TIDAK SESUAI");
 		}
-		if(Atap.equals("bersih")){
-			System.out.println("kondisi atap SESUAI");
-		}
-		else{
-			System.out.println("kondisi atap TIDAK SESUAI");
-		}
-		if(Pintu.equals("bersih")){
-			System.out.println("kondisi pintu SESUAI");
+		if(Atap.equals("Bersih")){
+			System.out.println("Kondisi Atap SESUAI");
 		}
 		else{
-			System.out.println("kondisi pintu TIDAK SESUAI");
+			System.out.println("Kondisi Atap TIDAK SESUAI");
 		}
-		if(Jendela.equals("bersih")){
-			System.out.println("kondisi jendela SESUAI");
+		if(Pintu.equals("Bersih")){
+			System.out.println("Kondisi Pintu SESUAI");
 		}
 		else{
-			System.out.println("kondisi jendela TIDAK SESUAI");
+			System.out.println("Kondisi Pintu TIDAK SESUAI");
+		}
+		if(Jendela.equals("Bersih")){
+			System.out.println("Kondisi Jendela SESUAI");
+		}
+		else{
+			System.out.println("Kondisi Jendela TIDAK SESUAI");
 		}
         
     }
