@@ -36,36 +36,36 @@ public class KeamananKelas extends KelasUtama {
     @Override
     void Input() {        
         System.out.println("Kekokohan : ");
-        String Kekokohan = input.next();
+        setKekokohan(input.next());
         System.out.println("Kunci Pintu dan Jendela : ");
-        String KunciPintuJendela = input.next();
+        setKunciPintuJendela(input.next());
         System.out.println("Bahaya : ");
-        String Bahaya = input.next();
+        setBahaya(input.next());
         
     }
 
     @Override
     void View() {
-        System.out.println("Kekokohan : "+Kekokohan);
-        System.out.println("Kunci Pintu dan Jendela : "+KunciPintuJendela);
-        System.out.println("Bahaya : "+Bahaya);
+        System.out.println("Kekokohan : "+getKekokohan());
+        System.out.println("Kunci Pintu dan Jendela : "+getKunciPintuJendela());
+        System.out.println("Bahaya : "+getBahaya());
     }
 
     @Override
     void Analisa() {
-            if(Kekokohan.equals("Kokohan")){
+            if(getKekokohan().equals("Kokohan")){
         	System.out.println("SESUAI!");
         }
             else{
             	System.out.println("TIDAK SESUAI!");
     	}
-            if(KunciPintuJendela.equals("Ada Kunci Pintu dan Jendela")){
+            if(getKunciPintuJendela().equals("Ada Kunci Pintu dan Jendela")){
 		System.out.println("SESUAI!");
 	}
             else{
 		System.out.println("TIDAK SESUAI!");
 	}
-            if(Bahaya.equals("TIdak Bahaya")){
+            if(getBahaya().equals("TIdak Bahaya")){
 		System.out.println("SESUAI!");
 	}	
             else{
@@ -76,10 +76,10 @@ public class KeamananKelas extends KelasUtama {
     
     public void Save(){
         try {
-            FileWriter set = new FileWriter("Simpan.txt");
-            set.write("Kekokohan : "+Kekokohan);
-            set.write("Kunci Pintu Jendela : "+KunciPintuJendela);
-            set.write("Bahaya : "+Bahaya);
+            FileWriter set = new FileWriter("Keamanan.txt");
+            set.write("Kekokohan : "+getKekokohan());
+            set.write("Kunci Pintu Jendela : "+getKunciPintuJendela());
+            set.write("Bahaya : "+getBahaya());
             set.close();
         }
         catch (Exception e){

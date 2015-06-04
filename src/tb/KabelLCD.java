@@ -35,8 +35,8 @@ public class KabelLCD implements JumlahKondisiSarana {
     @Override
     public int analisisJumlah() {
         System.out.println("Masukkan Jumlah Kabel LCD : ");
-		Jumlah = input.nextInt();
-		if(Jumlah >= 1){
+		setJumlah(input.nextInt());
+		if(getJumlah() >= 1){
 			return 1;
 		}
 		else{
@@ -47,8 +47,8 @@ public class KabelLCD implements JumlahKondisiSarana {
     @Override
     public int analisisKondisi() {
         System.out.println("Masukkan Kondisi Kabel LCD : ");
-		Kondisi = input.next();
-		if(Kondisi.equals("Berfungsi")){
+		setKondisi(input.next());
+		if(getKondisi().equals("Berfungsi")){
 			return 1;
 		}
 		else{
@@ -60,8 +60,8 @@ public class KabelLCD implements JumlahKondisiSarana {
     @Override
     public int analisisPosisi() {
     System.out.println("Masukkan Posisi Kabel LCD : ");
-		Posisi = input.next();
-		if(Posisi.equals("Dekat Dosen")){
+		setPosisi(input.next());
+		if(getPosisi().equals("Dekat Dosen")){
 			return 1;
 		}
 		else{
@@ -69,20 +69,20 @@ public class KabelLCD implements JumlahKondisiSarana {
 		}
 	}
 
-	public void tampil() {
-		System.out.println("Jumlah Kabel LCD : "+Jumlah);
-		System.out.println("Kondisi Kabel LCD : "+Kondisi);
-		System.out.println("Posisi Kabel LCD : "+Posisi);
+	public void Tampil() {
+		System.out.println("Jumlah Kabel LCD : "+getJumlah());
+		System.out.println("Kondisi Kabel LCD : "+getKondisi());
+		System.out.println("Posisi Kabel LCD : "+getPosisi());
 	}
     
         
-        public void simpan(){
+        public void Simpan(){
           
                   try {
                 FileWriter ketik = new FileWriter("LCD.txt");
-                ketik.write("Jumlah Kabel LCD : "+Jumlah);
-                ketik.write("Kondisi Kabel LCD : "+Kondisi);
-                ketik.write("Posisi Kabel LCD : "+Posisi);
+                ketik.write("Jumlah Kabel LCD : "+getJumlah());
+                ketik.write("Kondisi Kabel LCD : "+getKondisi());
+                ketik.write("Posisi Kabel LCD : "+getPosisi());
                  ketik.close();      
             }
             catch (Exception a){

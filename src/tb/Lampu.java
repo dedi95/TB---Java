@@ -36,8 +36,8 @@ public class Lampu implements JumlahKondisiSarana{
 	@Override
 	public int analisisJumlah() {
 		System.out.println("Masukkan Jumlah Lampu : ");
-		Jumlah = input.nextInt();
-		if(Jumlah >= 18){
+		setJumlah(input.nextInt());
+		if(getJumlah() >= 18){
 			return 1;
 		}
 		else{
@@ -48,8 +48,8 @@ public class Lampu implements JumlahKondisiSarana{
 	@Override
 	public int analisisKondisi() {
 		System.out.println("Masukkan Kondisi Lampu : ");
-		Posisi = input.next();
-		if(Kondisi.equals("Baik")&& Jumlah == 18){
+		setPosisi(input.next());
+		if(getKondisi().equals("Baik")&& getJumlah() == 18){
 			return 1;
 		}
 		else{
@@ -60,8 +60,8 @@ public class Lampu implements JumlahKondisiSarana{
 	@Override
 	public int analisisPosisi() {
 		System.out.println("Masukkan Posisi Lampu : ");
-		Posisi = input.next();
-		if(Posisi.equals("Atas")){
+		setPosisi(input.next());
+		if(getPosisi().equals("Atas")){
 			return 1; 
 		}
 		else{
@@ -70,18 +70,18 @@ public class Lampu implements JumlahKondisiSarana{
 	}
 
 	public void tampil() {
-		System.out.println("Jumlah Lampu : "+Jumlah);
-		System.out.println("Kondisi Lampu : "+Kondisi);
-		System.out.println("Posisi Lampu : "+Posisi);
+		System.out.println("Jumlah Lampu : "+getJumlah());
+		System.out.println("Kondisi Lampu : "+getKondisi());
+		System.out.println("Posisi Lampu : "+getPosisi());
 	}
         
         public void simpan(){
           
                   try {
                 FileWriter ketik = new FileWriter("Lampu.txt");
-                ketik.write("Jumlah Lampu : "+Jumlah);
-                ketik.write("Kondisi Lampu : "+Kondisi);
-                ketik.write("Posisi Lampu : "+Posisi);
+                ketik.write("Jumlah Lampu : "+getJumlah());
+                ketik.write("Kondisi Lampu : "+getKondisi());
+                ketik.write("Posisi Lampu : "+getPosisi());
                  ketik.close();      
             }
             catch (Exception a){

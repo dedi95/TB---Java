@@ -14,11 +14,19 @@ public class TesKelas {
         
         id.IdentitasRuangKelas();
         id.KondisiKelas();
+        id.Luas();
+        id.RasioLuas();
         id.cetakData();
-        aman.Save();
+        id.Save();
         aman.Input();
+        aman.Save();
         aman.View();
-        
+        lingkung.Input();
+        lingkung.Save();
+        lingkung.View();
+        bersih.Input();
+        bersih.Save();
+        bersih.View();
         /*aman.KeamananKelas();
         bersih.KebersihanRuangKelas();
         nyaman.KenyamananKelas();

@@ -62,52 +62,52 @@ public class LingkunganKelas extends KelasUtama{
     @Override
     void Input() {
         System.out.println("Kondisi Lantai : ");
-        String KondisiLantai = input.next();
+        setLantai(input.next());
         System.out.println("Kondisi Dinding : ");
-        String KondisiDinding = input.next();
+        setDinding(input.next());
         System.out.println("Kondisi Atap : ");
-        String KondisiAtap = input.next();
+        setAtap(input.next());
         System.out.println("Kondisi Pintu : ");
-        String KondisiPintu = input.next();
+        setPintu(input.next());
         System.out.println("Kondisi Jendela : ");
-        String KondisiJendela = input.next();
+        setJendela(input.next());
         }
 
     @Override
     void View() {
-        System.out.println("Kondisi Lantai : "+Lantai);
-        System.out.println("Kondisi Dinding : "+Dinding);
-        System.out.println("Kondisi Atap : "+Atap);
-        System.out.println("Kondisi Pintu : "+Pintu);
-        System.out.println("Kondisi Jendela : "+Jendela);}
+        System.out.println("Kondisi Lantai : "+getLantai());
+        System.out.println("Kondisi Dinding : "+getDinding());
+        System.out.println("Kondisi Atap : "+getAtap());
+        System.out.println("Kondisi Pintu : "+getPintu());
+        System.out.println("Kondisi Jendela : "+getJendela());}
 
     @Override
     void Analisa() {
-                if(Lantai.equals("Bersih")){
+                if(getLantai().equals("Bersih")){
 			System.out.println("Kondisi Lantai SESUAI");
 		}
 		else{
 			System.out.println("Kondisi Lantai TIDAK SESUAI");
 		}
-		if(Dinding.equals("Bersih")){
+		if(getDinding().equals("Bersih")){
 			System.out.println("kondisi dinding SESUAI");
 		}
 		else{
 			System.out.println("Kondisi Dinding TIDAK SESUAI");
 		}
-		if(Atap.equals("Bersih")){
+		if(getAtap().equals("Bersih")){
 			System.out.println("Kondisi Atap SESUAI");
 		}
 		else{
 			System.out.println("Kondisi Atap TIDAK SESUAI");
 		}
-		if(Pintu.equals("Bersih")){
+		if(getPintu().equals("Bersih")){
 			System.out.println("Kondisi Pintu SESUAI");
 		}
 		else{
 			System.out.println("Kondisi Pintu TIDAK SESUAI");
 		}
-		if(Jendela.equals("Bersih")){
+		if(getJendela().equals("Bersih")){
 			System.out.println("Kondisi Jendela SESUAI");
 		}
 		else{
@@ -118,12 +118,12 @@ public class LingkunganKelas extends KelasUtama{
     
     public void Save(){
         try {
-            FileWriter set = new FileWriter("Simpan.txt");
-            set.write("Kondisi Lantai : "+Lantai);
-            set.write("Kondisi Dinding : "+Dinding);
-            set.write("Kondisi Atap : "+Atap);
-            set.write("Kondisi Pintu : "+Pintu);
-            set.write("Kondisi Jendela : "+Jendela);
+            FileWriter set = new FileWriter("Lingkungan.txt");
+            set.write("Kondisi Lantai : "+getLantai());
+            set.write("Kondisi Dinding : "+getDinding());
+            set.write("Kondisi Atap : "+getAtap());
+            set.write("Kondisi Pintu : "+getPintu());
+            set.write("Kondisi Jendela : "+getJendela());
             set.close();
         }
         catch (Exception b){

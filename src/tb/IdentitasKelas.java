@@ -1,4 +1,5 @@
 package tb;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class IdentitasKelas {
@@ -15,7 +16,7 @@ public class IdentitasKelas {
         
     }   
     
-    public int KondisiKelas() {
+    public void KondisiKelas() {
         System.out.println("Masukkan Panjang Ruangan : ");
         data.setPanjang(input.nextInt());
         System.out.println("Masukkan Lebar Ruangan : ");
@@ -23,22 +24,39 @@ public class IdentitasKelas {
         System.out.println("Masukkan Jumlah Pintu : ");
         data.setJumlahPintu(input.nextInt());
         System.out.println("Masukkan Jumlah Kursi : ");
-        data.setJumlahPintu(input.nextInt());
+        data.setJumlahKursi(input.nextInt());
         System.out.println("Masukkan Jumlah Jendela : ");
         data.setJumlahJendela(input.nextInt());
         
-        return 0;
-    }
-        public void cetakData() {
-            System.out.println("Luas = "+Luas());
-            System.out.println("Rasio Luas = "+RasioLuas());
-        }
-        
-        float Luas() {
+            }
+    float Luas() {
             return data.getPanjang()*data.getLebar();
 	}
 	
-        double RasioLuas(){
+    double RasioLuas(){
             return Luas()/data.getJumlahKursi();
+        }    
+    public void cetakData() {
+            System.out.println("Luas = "+Luas());
+            System.out.println("Rasio Luas = "+RasioLuas());
         }
+    
+    public void Save(){
+	try{
+	FileWriter ketik = new FileWriter("Identitas.txt");
+	ketik.write("Nama Ruangan : "+data.getNamaRuangan());
+	ketik.write("Lokasi : "+data.getLokasiRuangan());
+	ketik.write("Jurusan : "+data.getJurusan());
+	ketik.write("Panjang : "+data.getPanjang());
+        ketik.write("Lebar : "+data.getLebar());
+        ketik.write("Jumlah Pintu : "+data.getJumlahPintu());
+        ketik.write("Jumlah Kursi : "+data.getJumlahKursi());
+        ketik.write("Jumlah Jendela : "+data.getJumlahJendela());
+        ketik.close();
+    }
+	catch(Exception e){
+            e.printStackTrace();
+	}
+    }
+        
 }    

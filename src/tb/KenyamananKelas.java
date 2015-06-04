@@ -54,53 +54,53 @@ public class KenyamananKelas extends KelasUtama{
     @Override
     void Input() {
         System.out.println("Masukkan Bising : ");
-        String Kebisingan = input.next();      
+        setKebisingan(input.next());      
         System.out.println("Masukkan Bau : ");
-        String Bau = input.next();
+        setBau(input.next());
         System.out.println("Masukkan Bocor : ");
-        String Kebocoran = input.next();
+        setKebocoran(input.next());
         System.out.println("Masukkan Rusak : ");
-        String Kerusakan = input.next();        
+        setKerusakan(input.next());        
         System.out.println("Masukkan Keausan : ");
-        String Keausan = input.next();
+        setKeausan(input.next());
     }
 
     @Override
     void View() {
-        System.out.println("Kebisingan = "+Kebisingan);
-        System.out.println("Bau = "+Bau);
-        System.out.println("Kebocoran = "+Kebocoran);
-        System.out.println("Kerusakan = "+Kerusakan);
-        System.out.println("Keausan = "+Keausan);
+        System.out.println("Kebisingan = "+getKebisingan());
+        System.out.println("Bau = "+getBau());
+        System.out.println("Kebocoran = "+getKebocoran());
+        System.out.println("Kerusakan = "+getKerusakan());
+        System.out.println("Keausan = "+getKeausan());
     }
 
     @Override
     void Analisa() {
-        if(Kebisingan.equals("TIDAK BISING")){
+        if(getKebisingan().equals("TIDAK BISING")){
             System.out.println("SESUAI");
 	}
 	else{
             System.out.println("TIDAK SESUAI");
 	}
-	if(Bau.equals("TIDAK BAU")){
+	if(getBau().equals("TIDAK BAU")){
             System.out.println("SESUAI");
 	}
 	else{
             System.out.println("TIDAK SESUAI");
 	}
-	if(Kebocoran.equals("TIDAK BOCOR")){
+	if(getKebocoran().equals("TIDAK BOCOR")){
             System.out.println("SESUAI");
 	}
 	else{
             System.out.println("TIDAK SESUAI");
 	}
-        if(Kerusakan.equals("TIDAK RUSAK")){
+        if(getKerusakan().equals("TIDAK RUSAK")){
             System.out.println("SESUAI");
 	}	
 	else{
             System.out.println("TIDAK SESUAI");
 	}
-	if(Keausan.equals("TIDAK AUS")){
+	if(getKeausan().equals("TIDAK AUS")){
             System.out.println("SESUAI");
 	}
 	else{
@@ -110,12 +110,12 @@ public class KenyamananKelas extends KelasUtama{
     
     public void Save(){
         try {
-            FileWriter set = new FileWriter("Simpan.txt");
-            set.write("Kebisingan : "+Kebisingan);
-            set.write("Bau : "+Bau);
-            set.write("Kebocoran : "+Kebocoran);
-            set.write("Kerusakan : "+Kerusakan);
-            set.write("Keausan : "+Keausan);
+            FileWriter set = new FileWriter("Kenyamanan.txt");
+            set.write("Kebisingan : "+getKebisingan());
+            set.write("Bau : "+getBau());
+            set.write("Kebocoran : "+getKebocoran());
+            set.write("Kerusakan : "+getKerusakan());
+            set.write("Keausan : "+getKeausan());
             set.close();
         }
         catch (Exception e){

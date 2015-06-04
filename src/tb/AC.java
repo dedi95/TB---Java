@@ -36,8 +36,8 @@ public class AC implements JumlahKondisiSarana {
     @Override
     public int analisisJumlah() {
         System.out.println("Masukkan Jumlah AC : ");
-        Jumlah = input.nextInt();
-		if(Jumlah >= 1){
+        setJumlah(input.nextInt());
+		if(getJumlah() >= 1){
 			return 1;
 		}
 		else{
@@ -48,8 +48,8 @@ public class AC implements JumlahKondisiSarana {
     @Override
     public int analisisKondisi() {
         System.out.println("Masukkan Kondisi AC : ");
-        Kondisi = input.next();
-		if(Kondisi.equals("Baik")){
+        setKondisi(input.next());
+		if(getKondisi().equals("Baik")){
 			return 1;
 		}
 		else{
@@ -60,8 +60,8 @@ public class AC implements JumlahKondisiSarana {
     @Override
     public int analisisPosisi() {
         System.out.println("Masukkan Posisi AC : ");
-        Posisi = input.next();
-                if(Posisi.equals("Sesuai")){
+        setPosisi(input.next());
+                if(getPosisi().equals("Atas")){
                         return 1;
                 }
                 else{
@@ -70,17 +70,17 @@ public class AC implements JumlahKondisiSarana {
     }
    
     public void tampilan(){
-        System.out.println("Masukkan Jumlah AC "+Jumlah);
-        System.out.println("Masukkan Kondisi AC"+Kondisi);
-        System.out.println("Masukkan Posisi AC"+Posisi);
+        System.out.println("Masukkan Jumlah AC "+getJumlah());
+        System.out.println("Masukkan Kondisi AC"+getKondisi());
+        System.out.println("Masukkan Posisi AC"+getPosisi());
     }
     
     public void save(){
 	try{
 	FileWriter ketik = new FileWriter("AC.txt");
-	ketik.write("Jumlah AC : "+Jumlah);
-	ketik.write("Kondisi AC : "+Kondisi);
-	ketik.write("Posisi AC : "+Posisi);
+	ketik.write("Jumlah AC : "+getJumlah());
+	ketik.write("Kondisi AC : "+getKondisi());
+	ketik.write("Posisi AC : "+getPosisi());
 	ketik.close();
     }
 	catch(Exception e){

@@ -45,44 +45,44 @@ public class KebersihanKelas extends KelasUtama {
     @Override
     void Input() {
         System.out.println("Sirkulasi Udara : ");
-        String SirkulasiUdara = input.next();
+        setSirkulasiUdara(input.next());
         System.out.println("Pencahayaan : ");
-        int Pencahayaan = input.nextInt();
+        setPencahayaan(input.nextInt());
         System.out.println("Kelembapan : ");
-        int Kelembapan = input.nextInt();
+        setKelembapan(input.nextInt());
         System.out.println("Suhu(Celcius) : ");
-        int SuhuCel = input.nextInt();
+        setSuhuCel(input.nextInt());
     }
 
     @Override
     void View() {
-        System.out.println("Sirkulasi Udara : "+SirkulasiUdara);
-        System.out.println("Pencahayaan : "+Pencahayaan);
-        System.out.println("Kelembapan : "+Kelembapan);
-        System.out.println("Suhu(Celcius) : "+SuhuCel);
+        System.out.println("Sirkulasi Udara : "+getSirkulasiUdara());
+        System.out.println("Pencahayaan : "+getPencahayaan());
+        System.out.println("Kelembapan : "+getKelembapan());
+        System.out.println("Suhu(Celcius) : "+getSuhuCel());
     }
 
     @Override
     void Analisa() {
-        if(SirkulasiUdara.equals("Lancar")){
+        if(getSirkulasiUdara().equals("Lancar")){
             System.out.print("SESUAI!");
 	}
 	else{
             System.out.println("TIDAK SESUAI!");
 	}
-	if(Pencahayaan >= 250 && Pencahayaan <= 300 ){
+	if(getPencahayaan() >= 250 && getPencahayaan() <= 300 ){
             System.out.print("SESUAI!");
 	}
 	else{
             System.out.print("TIDAK SESUAI!");
 	}
-	if(Kelembapan >=70 && Kelembapan <=80){
+	if(getKelembapan() >=70 && getKelembapan() <=80){
             System.out.print("SESUAI!");
 	}
 	else{
             System.out.print("TIDAK SESUAI!");
 	}
-	if(SuhuCel >=25 && SuhuCel <= 35){
+	if(getSuhuCel() >=25 && getSuhuCel() <= 35){
             System.out.print("SESUAI!");
 	}
 	else{
@@ -92,11 +92,11 @@ public class KebersihanKelas extends KelasUtama {
     
     public void Save(){
     try {
-        FileWriter set = new FileWriter("Simpan.txt");
-            set.write("Sirkulasi Udara : "+SirkulasiUdara);
-            set.write("Pencahayaan : "+Pencahayaan);
-            set.write("Kelembapan : "+Kelembapan);
-            set.write("SuhuCel : "+SuhuCel);
+        FileWriter set = new FileWriter("Kebersihan.txt");
+            set.write("Sirkulasi Udara : "+getSirkulasiUdara());
+            set.write("Pencahayaan : "+getPencahayaan());
+            set.write("Kelembapan : "+getKelembapan());
+            set.write("SuhuCel : "+getSuhuCel());
             set.close();
     }
     catch (Exception a){

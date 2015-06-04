@@ -29,8 +29,8 @@ public class KipasAngin implements JumlahKondisiSarana {
 	@Override
 	public int analisisJumlah() {
 		System.out.println("Masukkan Jumlah Kipas Angin : ");
-		Jumlah = input.nextInt();
-		if(Jumlah >= 2){
+		setJumlah(input.nextInt());
+		if(getJumlah() >= 2){
 			return 1;
 		}
 		else{
@@ -41,8 +41,8 @@ public class KipasAngin implements JumlahKondisiSarana {
 	@Override
 	public int analisisKondisi() {
 		System.out.println("Masukkan Kondisi Kipas Angin : ");
-		Kondisi = input.next();
-		if(Kondisi.equals("Baik") && Jumlah == 2){
+		setKondisi(input.next());
+		if(getKondisi().equals("Baik") && getJumlah() == 2){
 			return 1;
 		}
 		else{
@@ -53,8 +53,8 @@ public class KipasAngin implements JumlahKondisiSarana {
 	@Override
 	public int analisisPosisi() {
 		System.out.println("Masukkan Posisi Kipas Angin: ");
-		Posisi = input.next();
-		if(Posisi.equals("Atas")){
+		setPosisi(input.next());
+		if(getPosisi().equals("Atas")){
 			return 1;
 		}
 		else{
@@ -63,9 +63,9 @@ public class KipasAngin implements JumlahKondisiSarana {
 	}
 
 	public void Tampil() {
-		System.out.println("Jumlah Kipas Angin : "+Jumlah);
-		System.out.println("Kondisi Kipas Angin : "+Kondisi);
-		System.out.println("Posisi Kipas Angin : "+Posisi);
+		System.out.println("Jumlah Kipas Angin : "+getJumlah());
+		System.out.println("Kondisi Kipas Angin : "+getKondisi());
+		System.out.println("Posisi Kipas Angin : "+getPosisi());
                 
                         
 	}  
@@ -73,9 +73,9 @@ public class KipasAngin implements JumlahKondisiSarana {
           
                   try {
                 FileWriter ketik = new FileWriter("KipasAngin.txt");
-                ketik.write("Jumlah Kipas Angin : "+Jumlah);
-                ketik.write("Kondisi Kipas Angin : "+Kondisi);
-                ketik.write("Posisi Kipas Angin : "+Posisi);
+                ketik.write("Jumlah Kipas Angin : "+getJumlah());
+                ketik.write("Kondisi Kipas Angin : "+getKondisi());
+                ketik.write("Posisi Kipas Angin : "+getPosisi());
                  ketik.close();      
             }
             catch (Exception a){
