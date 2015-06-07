@@ -792,8 +792,9 @@ public Inventaris_GUI() {
         id.setJumlahJendela(Integer.parseInt(JumlahJendela.getText()));
         id.Luas();
         id.RasioLuas();
-        id.save();
         id.View();
+        id.save();
+        
         
         JumlahKondisiSarana.setVisible(true);
         Identitas.setVisible(false);     
@@ -846,7 +847,7 @@ public Inventaris_GUI() {
         lcd.analisisJumlah();
         lcd.analisisKondisi();
         lcd.analisisPosisi();
-        lcd.Tampil();
+        lcd.tampil();
         lcd.save();
        
         kpas.setJumlah(Integer.parseInt(JumlahKipasAngin.getSelectedItem().toString()));
@@ -855,7 +856,7 @@ public Inventaris_GUI() {
         kpas.analisisJumlah();
         kpas.analisisKondisi();
         kpas.analisisPosisi();
-        kpas.Tampil();
+        kpas.tampil();
         kpas.save();
         
         lamp.setJumlah(Integer.parseInt(JumlahLampu.getSelectedItem().toString()));
@@ -873,7 +874,7 @@ public Inventaris_GUI() {
         ace.analisisJumlah();
         ace.analisisKondisi();
         ace.analisisPosisi();
-        ace.tampilan();
+        ace.tampil();
         ace.save();
         
         cctv.setJumlah(Integer.parseInt(JumlahCCTV.getSelectedItem().toString()));

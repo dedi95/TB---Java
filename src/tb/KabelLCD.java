@@ -75,7 +75,7 @@ public class KabelLCD implements JumlahKondisiSarana {
 		}
 	}
 
-    public void Tampil() {
+    public void tampil() {
 	System.out.println("Jumlah Kabel LCD : "+getJumlah());
 	System.out.println("Kondisi Kabel LCD : "+getKondisi());
 	System.out.println("Posisi Kabel LCD : "+getPosisi());

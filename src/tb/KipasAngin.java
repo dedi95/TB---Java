@@ -70,7 +70,7 @@ public class KipasAngin implements JumlahKondisiSarana {
 		}
 	}
 
-    public void Tampil() {
+    public void tampil() {
 	System.out.println("Jumlah Kipas Angin : "+getJumlah());
 	System.out.println("Kondisi Kipas Angin : "+getKondisi());
 	System.out.println("Posisi Kipas Angin : "+getPosisi());

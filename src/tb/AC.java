@@ -75,7 +75,7 @@ public class AC implements JumlahKondisiSarana {
                 }
     }
    
-    public void tampilan(){
+    public void tampil(){
         System.out.println("Masukkan Jumlah AC "+getJumlah());
         System.out.println("Masukkan Kondisi AC"+getKondisi());
         System.out.println("Masukkan Posisi AC"+getPosisi());
