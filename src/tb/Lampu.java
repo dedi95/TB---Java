@@ -1,10 +1,16 @@
 package tb;
-
-import java.io.FileWriter;
 import java.util.Scanner;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class Lampu implements JumlahKondisiSarana{
 	Scanner input = new Scanner (System.in);
+        String file = "Lampu.txt";
 	private int Jumlah;
 	private String Kondisi;
 	private String Posisi;
@@ -68,19 +74,42 @@ public class Lampu implements JumlahKondisiSarana{
 		System.out.println("Jumlah Lampu : "+getJumlah());
 		System.out.println("Kondisi Lampu : "+getKondisi());
 		System.out.println("Posisi Lampu : "+getPosisi());
-	}
+            }
         
-        public void simpan(){
-          
-                  try {
-                FileWriter ketik = new FileWriter("Lampu.txt");
-                ketik.write("Jumlah Lampu : "+getJumlah());
-                ketik.write("Kondisi Lampu : "+getKondisi());
-                ketik.write("Posisi Lampu : "+getPosisi());
-                 ketik.close();      
+        public void simpan(){          
+            try {
+                ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+                ketik.writeObject("Jumlah Lampu : "+getJumlah());
+                ketik.writeObject("Kondisi Lampu : "+getKondisi());
+                ketik.writeObject("Posisi Lampu : "+getPosisi());
+                ketik.close();      
+            }
+            catch(FileNotFoundException e){
+                e.printStackTrace();
             }
             catch (Exception a){
                 a.printStackTrace();
             }
-}  
+    }  
+        
+        public void read(){
+        try {
+            ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+            baca.readObject();
+            System.out.println("Jumlah Lampu : "+getJumlah());
+            System.out.println("Kondisi Lampu : "+getKondisi());
+            System.out.println("Posisi Lampu : "+getPosisi());
+            baca.close();
+        }
+        
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }  
 }

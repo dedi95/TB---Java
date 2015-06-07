@@ -1,9 +1,16 @@
 package tb;
-import java.io.FileWriter;
 import java.util.Scanner;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class KenyamananKelas extends KelasUtama{
     Scanner input = new Scanner(System.in);  
+    String file = "Kenyamanan.txt";
     private String Kebisingan;
     private String Bau;
     private String Kebocoran;
@@ -111,16 +118,41 @@ public class KenyamananKelas extends KelasUtama{
     
     public void Save(){
         try {
-            FileWriter set = new FileWriter("Kenyamanan.txt");
-            set.write("Kebisingan : "+getKebisingan());
-            set.write("Bau : "+getBau());
-            set.write("Kebocoran : "+getKebocoran());
-            set.write("Kerusakan : "+getKerusakan());
-            set.write("Keausan : "+getKeausan());
-            set.close();
+            ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("Kebisingan : "+getKebisingan());
+            ketik.writeObject("Bau : "+getBau());
+            ketik.writeObject("Kebocoran : "+getKebocoran());
+            ketik.writeObject("Kerusakan : "+getKerusakan());
+            ketik.writeObject("Keausan : "+getKeausan());
+            ketik.close();
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
         }
         catch (Exception e){
             e.printStackTrace();
         }
     }    
+    
+    public void read(){
+        try{
+        ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Kebisingan = "+getKebisingan());
+        System.out.println("Bau = "+getBau());
+        System.out.println("Kebocoran = "+getKebocoran());
+        System.out.println("Kerusakan = "+getKerusakan());
+        System.out.println("Keausan = "+getKeausan());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }
 }

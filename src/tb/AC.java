@@ -1,11 +1,18 @@
 package tb;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class AC implements JumlahKondisiSarana {
     Scanner input = new Scanner(System.in);
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
+    String file = "AC.txt"; 
     
     public int getJumlah() {
         return Jumlah;
@@ -76,13 +83,36 @@ public class AC implements JumlahKondisiSarana {
     
     public void save(){
 	try{
-	FileWriter ketik = new FileWriter("AC.txt");
-	ketik.write("Jumlah AC : "+getJumlah());
-	ketik.write("Kondisi AC : "+getKondisi());
-	ketik.write("Posisi AC : "+getPosisi());
+	ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+	ketik.writeObject("Jumlah AC : "+getJumlah());
+	ketik.writeObject("Kondisi AC : "+getKondisi());
+	ketik.writeObject("Posisi AC : "+getPosisi());
 	ketik.close();
     }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+	}
 	catch(Exception e){
+            e.printStackTrace();
+	}
+    }
+    
+    public void read(){
+	try{
+	ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Masukkan Jumlah AC "+getJumlah());
+        System.out.println("Masukkan Kondisi AC"+getKondisi());
+        System.out.println("Masukkan Posisi AC"+getPosisi());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
             e.printStackTrace();
 	}
     }

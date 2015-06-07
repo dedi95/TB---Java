@@ -1,9 +1,16 @@
 package tb;
 import java.io.FileWriter;
 import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class IdentitasKelas {    
     Scanner input = new Scanner(System.in);
+    String file = "Identitas.txt";
     private String NamaRuangan;
     private String LokasiRuangan;
     private String Jurusan;
@@ -132,6 +139,13 @@ public class IdentitasKelas {
         System.out.println("Nama Ruangan : "+getNamaRuangan());
         System.out.println("Lokasi Ruangan : "+getLokasiRuangan());
         System.out.println("Jurusan : "+getJurusan());
+        System.out.println("Masukkan Panjang : "+getPanjang());
+        System.out.println("Masukkan Lebar : "+getLebar());
+        System.out.println("Masukkan Jumlah Pintu : "+getJumlahPintu());
+        System.out.println("Masukkan Jumlah Kursi : "+getJumlahKursi());
+        System.out.println("Masukkan Jumlah Jendela : "+getJumlahJendela());
+        System.out.println("Luas = "+Luas());
+        System.out.println("Rasio Luas = "+RasioLuas());
     }
     
     float Luas() {
@@ -140,28 +154,58 @@ public class IdentitasKelas {
 	
     double RasioLuas(){
             return Luas()/getJumlahKursi();
-        }    
-    public void cetakData() {
-            System.out.println("Luas = "+Luas());
-            System.out.println("Rasio Luas = "+RasioLuas());
         }   
     
     public void Save(){
 	try{
-	FileWriter ketik = new FileWriter("Identitas.txt");
-	ketik.write("Nama Ruangan : "+getNamaRuangan());
-	ketik.write("Lokasi : "+getLokasiRuangan());
-	ketik.write("Jurusan : "+getJurusan());
-	ketik.write("Panjang : "+getPanjang());
-        ketik.write("Lebar : "+getLebar());
-        ketik.write("Jumlah Pintu : "+getJumlahPintu());
-        ketik.write("Jumlah Kursi : "+getJumlahKursi());
-        ketik.write("Jumlah Jendela : "+getJumlahJendela());
+	ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+	ketik.writeObject("Nama Ruangan : "+getNamaRuangan());
+	ketik.writeObject("Lokasi : "+getLokasiRuangan());
+	ketik.writeObject("Jurusan : "+getJurusan());
+	ketik.writeObject("Panjang : "+getPanjang());
+        ketik.writeObject("Lebar : "+getLebar());
+        ketik.writeObject("Jumlah Pintu : "+getJumlahPintu());
+        ketik.writeObject("Jumlah Kursi : "+getJumlahKursi());
+        ketik.writeObject("Jumlah Jendela : "+getJumlahJendela());
+        ketik.writeObject("Luas : "+getLuas());
+        ketik.writeObject("Rasio Luas : "+getRasioLuas());
         ketik.close();
     }
-	catch(Exception e){
+	catch(FileNotFoundException e){
+            e.printStackTrace();
+	}
+        catch(Exception e){
             e.printStackTrace();
 	}
     }
     
-}   
+    public void read(){
+        try{
+        ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Masukkan Nama Ruangan : "+getNamaRuangan());
+        System.out.println("Masukkan Lokasi Ruangan : "+getLokasiRuangan());
+        System.out.println("Masukkan Jurusan : "+getJurusan());
+        System.out.println("Masukkan Panjang : "+getPanjang());
+        System.out.println("Masukkan Lebar : "+getLebar());
+        System.out.println("Masukkan Jumlah Pintu : "+getJumlahPintu());
+        System.out.println("Masukkan Jumlah Kursi : "+getJumlahKursi());
+        System.out.println("Masukkan Jumlah Jendela : "+getJumlahJendela());
+        System.out.println("Luas = "+Luas());
+        System.out.println("Rasio Luas = "+RasioLuas());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }
+}
+        
+    
+   

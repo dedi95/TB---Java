@@ -1,9 +1,16 @@
 package tb;
-import java.io.FileWriter;
 import java.util.Scanner;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class KebersihanKelas extends KelasUtama {
     Scanner input = new Scanner(System.in);    
+    String file = "Kebersihan";
     private String SirkulasiUdara;
     private int Pencahayaan;
     private int Kelembapan;
@@ -44,7 +51,7 @@ public class KebersihanKelas extends KelasUtama {
 
     @Override
     public void Input() {
-/*        System.out.println("Sirkulasi Udara : ");
+/*      System.out.println("Sirkulasi Udara : ");
         setSirkulasiUdara(input.next());
         System.out.println("Pencahayaan : ");
         setPencahayaan(input.nextInt());
@@ -93,15 +100,39 @@ public class KebersihanKelas extends KelasUtama {
     
     public void Save(){
     try {
-        FileWriter set = new FileWriter("Kebersihan.txt");
-            set.write("Sirkulasi Udara : "+getSirkulasiUdara());
-            set.write("Pencahayaan : "+getPencahayaan());
-            set.write("Kelembapan : "+getKelembapan());
-            set.write("SuhuCel : "+getSuhuCel());
-            set.close();
+        ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("Sirkulasi Udara : "+getSirkulasiUdara());
+            ketik.writeObject("Pencahayaan : "+getPencahayaan());
+            ketik.writeObject("Kelembapan : "+getKelembapan());
+            ketik.writeObject("SuhuCel : "+getSuhuCel());
+            ketik.close();
+    }
+    catch(FileNotFoundException e){
+            e.printStackTrace();
     }
     catch (Exception a){
         a.printStackTrace();
     }    
 }
+    
+    public void read(){
+        try{
+        ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Sirkulasi Udara : "+getSirkulasiUdara());
+        System.out.println("Pencahayaan : "+getPencahayaan());
+        System.out.println("Kelembapan : "+getKelembapan());
+        System.out.println("Suhu : "+getSuhuCel());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }
 }

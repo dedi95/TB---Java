@@ -1,9 +1,15 @@
-
 package tb;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class KabelLCD implements JumlahKondisiSarana {
     Scanner input = new Scanner(System.in);
+    String file = "KabelLCD.txt";
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
@@ -69,23 +75,47 @@ public class KabelLCD implements JumlahKondisiSarana {
 		}
 	}
 
-	public void Tampil() {
-		System.out.println("Jumlah Kabel LCD : "+getJumlah());
-		System.out.println("Kondisi Kabel LCD : "+getKondisi());
-		System.out.println("Posisi Kabel LCD : "+getPosisi());
-	}
+    public void Tampil() {
+	System.out.println("Jumlah Kabel LCD : "+getJumlah());
+	System.out.println("Kondisi Kabel LCD : "+getKondisi());
+	System.out.println("Posisi Kabel LCD : "+getPosisi());
+    }
     
         
-        public void Simpan(){
-          
-                  try {
-                FileWriter ketik = new FileWriter("LCD.txt");
-                ketik.write("Jumlah Kabel LCD : "+getJumlah());
-                ketik.write("Kondisi Kabel LCD : "+getKondisi());
-                ketik.write("Posisi Kabel LCD : "+getPosisi());
-                 ketik.close();      
-            }
+    public void Simpan(){          
+        try {
+            ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("Jumlah Kabel LCD : "+getJumlah());
+            ketik.writeObject("Kondisi Kabel LCD : "+getKondisi());
+            ketik.writeObject("Posisi Kabel LCD : "+getPosisi());
+            ketik.close();  
+        }            
+            catch(FileNotFoundException e){
+                e.printStackTrace();
+        }
+            
             catch (Exception a){
                 a.printStackTrace();
-            }
-}}
+        }
+    }
+    
+    public void read(){
+	try{
+	ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Masukkan Jumlah Kabel LCD "+getJumlah());
+        System.out.println("Masukkan Kondisi Kabel LCD "+getKondisi());
+        System.out.println("Masukkan Posisi Kabel LCD "+getPosisi());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }
+}

@@ -1,9 +1,15 @@
-package tb;
-import java.io.FileWriter;
+package tb;import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class LingkunganKelas extends KelasUtama{
     Scanner input = new Scanner(System.in);
+    String file = "Lingkungan.txt";
     private String Lantai;
     private String Dinding;
     private String Atap;
@@ -80,7 +86,8 @@ public class LingkunganKelas extends KelasUtama{
         System.out.println("Kondisi Dinding : "+getDinding());
         System.out.println("Kondisi Atap : "+getAtap());
         System.out.println("Kondisi Pintu : "+getPintu());
-        System.out.println("Kondisi Jendela : "+getJendela());}
+        System.out.println("Kondisi Jendela : "+getJendela());
+    }
 
     @Override
     public void Analisa() {
@@ -119,16 +126,41 @@ public class LingkunganKelas extends KelasUtama{
     
     public void Save(){
         try {
-            FileWriter set = new FileWriter("Lingkungan.txt");
-            set.write("Kondisi Lantai : "+getLantai());
-            set.write("Kondisi Dinding : "+getDinding());
-            set.write("Kondisi Atap : "+getAtap());
-            set.write("Kondisi Pintu : "+getPintu());
-            set.write("Kondisi Jendela : "+getJendela());
-            set.close();
+            ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("Kondisi Lantai : "+getLantai());
+            ketik.writeObject("Kondisi Dinding : "+getDinding());
+            ketik.writeObject("Kondisi Atap : "+getAtap());
+            ketik.writeObject("Kondisi Pintu : "+getPintu());
+            ketik.writeObject("Kondisi Jendela : "+getJendela());
+            ketik.close();
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
         }
         catch (Exception b){
             b.printStackTrace();
         }
+    }
+    
+    public void read(){
+        try{
+            ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+            baca.readObject();
+            System.out.println("Lantai : "+getLantai());
+            System.out.println("Dinding : "+getDinding());
+            System.out.println("Atap : "+getAtap());
+            System.out.println("Pintu : "+getPintu());
+            System.out.println("Jendela : "+getJendela());
+            baca.close();
+    }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
     }
 }

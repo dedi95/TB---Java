@@ -1,8 +1,15 @@
 package tb;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class Internet extends KelasUtama {
     Scanner input = new Scanner(System.in);
+    String file = "Internet.txt";
     private String SSID;
     private int Bandwidth;
 
@@ -54,15 +61,37 @@ public class Internet extends KelasUtama {
 
     public void Save(){
     try {
-        FileWriter set = new FileWriter("Internet.txt");
-            set.write("SSID : "+getSSID());
-            set.write("Bandwidth : "+getBandwidth());
-            set.close();
+        ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("SSID : "+getSSID());
+            ketik.writeObject("Bandwidth : "+getBandwidth());
+            ketik.close();
+    }
+    catch(FileNotFoundException e){
+            e.printStackTrace();
     }
     catch (Exception a){
         a.printStackTrace();
     }    
     
-    } 
+    }
     
+    public void read(){
+        try {
+            ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+            baca.readObject();
+            System.out.println("SSID : "+getSSID());
+            System.out.println("Besar Bandwidth : "+getBandwidth());
+            baca.close();
+        }
+        
+        catch(FileNotFoundException e){
+              e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }    
 }

@@ -1,1 +1,1 @@
-SSID : UMM PremiumBandwidth : 50
+SSID : UMM HotspotBandwidth : 50

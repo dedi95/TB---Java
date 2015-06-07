@@ -1,9 +1,16 @@
 package tb;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class CCTV implements JumlahKondisiSarana{
 Scanner input = new Scanner(System.in);
+    String file = "CCTV.txt";
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
@@ -70,24 +77,47 @@ Scanner input = new Scanner(System.in);
 		
       }
     
-	public void tampil() {
-		System.out.println("Jumlah CCTV : "+getJumlah());
-		System.out.println("Kondisi CCTV : "+getKondisi());
-		System.out.println("Posisi CCTV : "+getPosisi());	
-	}
+    public void tampil() {
+	System.out.println("Jumlah CCTV : "+getJumlah());
+	System.out.println("Kondisi CCTV : "+getKondisi());
+	System.out.println("Posisi CCTV : "+getPosisi());	
+    }
         
-        public void simpan(){
-            try {
-                FileWriter ketik = new FileWriter("CCTV.txt");
-                ketik.write("Jumlah CCTV : "+getJumlah());
-                ketik.write("Kondisi CCTV : "+getKondisi());
-                ketik.write("Posisi CCTV : "+getPosisi());
-                ketik.close();
-                
-            }
-            catch (Exception a){
-                a.printStackTrace();
-            }
+    public void simpan(){
+        try {
+            ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
+            ketik.writeObject("Jumlah CCTV : "+getJumlah());
+            ketik.writeObject("Kondisi CCTV : "+getKondisi());
+            ketik.writeObject("Posisi CCTV : "+getPosisi());
+            ketik.close();
+    }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+	}
+	catch(Exception e){
+            e.printStackTrace();
+	}
+            
+    }
+    
+    public void read(){
+	try{
+	ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
+        baca.readObject();
+	System.out.println("Masukkan Jumlah CCTV "+getJumlah());
+        System.out.println("Masukkan Kondisi CCTV "+getKondisi());
+        System.out.println("Masukkan Posisi CCTV "+getPosisi());
+	baca.close();
+    }
+        catch(FileNotFoundException e){
+              e.printStackTrace();
         }
+        catch(ClassNotFoundException e){
+              e.printStackTrace();
+        }
+	catch(IOException e){
+            e.printStackTrace();
+	}
+    }
     
 }

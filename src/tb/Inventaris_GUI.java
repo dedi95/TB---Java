@@ -20,14 +20,16 @@ public Inventaris_GUI() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         Login = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
-        jLabel61 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
         Kenyamanan = new javax.swing.JPanel();
@@ -161,30 +163,37 @@ public Inventaris_GUI() {
         Login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
-        jLabel6.setText("LOGIN INVENTARIS");
-        Login.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 250, 50));
+        jLabel6.setText("Login");
+        Login.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 150, 50));
+
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/security20070611.png"))); // NOI18N
+        Login.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 150, 140));
+
+        jLabel68.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
+        jLabel68.setText("INVENTARIS");
+        Login.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 250, 40));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel58.setText("Username");
-        Login.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        Login.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         jLabel59.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel59.setText("Password");
-        Login.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        Login.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        Login.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 170, 30));
+        Login.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 170, 30));
 
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
-        Login.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 170, 30));
+        Login.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 170, 30));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Submit");
@@ -193,10 +202,7 @@ public Inventaris_GUI() {
                 jButton2ActionPerformed(evt);
             }
         });
-        Login.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, 30));
-
-        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/database-search-icon.png"))); // NOI18N
-        Login.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 140, 150));
+        Login.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, -1, 30));
 
         cancel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancel.setText("Cancel");
@@ -205,10 +211,15 @@ public Inventaris_GUI() {
                 cancelActionPerformed(evt);
             }
         });
-        Login.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 80, 30));
+        Login.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 80, 30));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/nostalgic_paper_picture_series_02_169266.jpg"))); // NOI18N
-        Login.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 700));
+        jLabel60.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jLabel60PropertyChange(evt);
+            }
+        });
+        Login.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 390, 740));
 
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 388, 710));
 
@@ -782,7 +793,6 @@ public Inventaris_GUI() {
         id.View();
         id.Luas();
         id.RasioLuas();
-        id.cetakData();
         id.Save();
         
         JumlahKondisiSarana.setVisible(true);
@@ -1069,6 +1079,11 @@ public Inventaris_GUI() {
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         close();
     }//GEN-LAST:event_cancelActionPerformed
+
+    private void jLabel60PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel60PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel60PropertyChange
+    
     private void close(){
         WindowEvent winClosing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosing);
@@ -1145,6 +1160,7 @@ public Inventaris_GUI() {
     private javax.swing.JComboBox Udara;
     private javax.swing.JButton cancel;
     private javax.swing.JButton jButton2;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1202,13 +1218,14 @@ public Inventaris_GUI() {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
