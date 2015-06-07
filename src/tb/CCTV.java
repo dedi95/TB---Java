@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 
 public class CCTV implements JumlahKondisiSarana{
 Scanner input = new Scanner(System.in);
-    String file = "CCTV.txt";
+//    String file = "CCTV.txt";
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
@@ -82,8 +82,22 @@ Scanner input = new Scanner(System.in);
 	System.out.println("Kondisi CCTV : "+getKondisi());
 	System.out.println("Posisi CCTV : "+getPosisi());	
     }
-        
-    public void simpan(){
+    
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("CCTV.txt");
+            ketik.write("Jumlah CCTV : "+getJumlah());
+            ketik.write("Kondisi CCTV : "+getKondisi());
+            ketik.write("Posisi CCTV : "+getPosisi());            
+            ketik.close();
+        }
+        catch (Exception a) {
+            a.printStackTrace();
+        } 
+       
+    }
+    
+/*  public void simpan(){
         try {
             ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("Jumlah CCTV : "+getJumlah());
@@ -118,6 +132,6 @@ Scanner input = new Scanner(System.in);
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }   */
     
 }

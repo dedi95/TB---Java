@@ -76,7 +76,7 @@ public class StopKontak implements JumlahKondisiSarana {
 	System.out.println("Posisi Stop Kontak : "+getPosisi());	
     }
     
-    public void simpan(){
+    public void save(){
         try {
             FileWriter ketik = new FileWriter("StopKontak.txt");
             ketik.write("Jumlah Stop Kontak : "+getJumlah());

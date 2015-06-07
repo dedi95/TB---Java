@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class KipasAngin implements JumlahKondisiSarana {
     Scanner input = new Scanner (System.in);
-    String file = "KipasAngin.txt";
+//    String file = "KipasAngin.txt";
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
@@ -76,7 +76,20 @@ public class KipasAngin implements JumlahKondisiSarana {
 	System.out.println("Posisi Kipas Angin : "+getPosisi());
     }  
     
-    public void simpan(){          
+    public void save(){          
+        try {
+            FileWriter ketik = new FileWriter("KipasAngin.txt");
+            ketik.write("Jumlah Kipas Angin : "+getJumlah());
+            ketik.write("Kondisi Kipas Angin : "+getKondisi());
+            ketik.write("Posisi Kipas Angin : "+getPosisi());
+            ketik.close();      
+        }
+        catch (Exception a){
+            a.printStackTrace();
+        }
+    }
+    
+/*    public void simpan(){          
         try {
             ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("Jumlah Kipas Angin : "+getJumlah());
@@ -111,5 +124,5 @@ public class KipasAngin implements JumlahKondisiSarana {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }  
+    }   */
 }

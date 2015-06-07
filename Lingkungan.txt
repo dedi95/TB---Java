@@ -1,1 +1,1 @@
-Kondisi Lantai : BersihKondisi Dinding : KotorKondisi Atap : BersihKondisi Pintu : BersihKondisi Jendela : Bersih
+Kondisi Lantai : KotorKondisi Dinding : BersihKondisi Atap : KotorKondisi Pintu : BersihKondisi Jendela : Kotor

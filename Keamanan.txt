@@ -1,1 +1,1 @@
-Kekokohan : KokohKunci Pintu Jendela : Tidak AdaBahaya : Bahaya
+Bahaya : Tidak BahayaKekokohan : KokohKunci Pintu Jendela : Ada

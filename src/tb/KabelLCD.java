@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class KabelLCD implements JumlahKondisiSarana {
     Scanner input = new Scanner(System.in);
-    String file = "KabelLCD.txt";
+//    String file = "KabelLCD.txt";
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
@@ -81,8 +81,20 @@ public class KabelLCD implements JumlahKondisiSarana {
 	System.out.println("Posisi Kabel LCD : "+getPosisi());
     }
     
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("KabelLCD.txt");
+            ketik.write("Jumlah Kabel LCD : "+getJumlah());
+            ketik.write("Kondisi Kabel LCD : "+getKondisi());
+            ketik.write("Posisi Kabel LCD : "+getPosisi());
+            ketik.close();
+        }
+        catch (Exception a) {
+            a.printStackTrace();
+        }
+    }
         
-    public void Simpan(){          
+/*    public void Simpan(){          
         try {
             ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("Jumlah Kabel LCD : "+getJumlah());
@@ -117,5 +129,5 @@ public class KabelLCD implements JumlahKondisiSarana {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }   */
 }

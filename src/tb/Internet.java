@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class Internet extends KelasUtama {
     Scanner input = new Scanner(System.in);
-    String file = "Internet.txt";
+//    String file = "Internet.txt";
     private String SSID;
     private int Bandwidth;
 
@@ -58,8 +58,20 @@ public class Internet extends KelasUtama {
             System.out.print("TIDAK SESUAI!");
 	}
     }
-
-    public void Save(){
+    
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("Internet.txt");
+            ketik.write("Nama SSID : "+getSSID());
+            ketik.write("Besar Bandwidth : "+getBandwidth());
+            ketik.close();
+        }
+        catch (Exception a) {
+            a.printStackTrace();
+        }
+    }
+    
+/*    public void Save(){
     try {
         ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("SSID : "+getSSID());
@@ -93,5 +105,5 @@ public class Internet extends KelasUtama {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }    
+    }   */    
 }

@@ -523,7 +523,7 @@ public Inventaris_GUI() {
         jLabel31.setText("Posisi   :");
         JumlahKondisiSarana.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, 90, 20));
 
-        JumlahAC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banyaknya", "-", "1", "2", "3", " " }));
+        JumlahAC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banyaknya", "0", "1", "2", "3", " " }));
         JumlahAC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JumlahACActionPerformed(evt);
@@ -559,7 +559,7 @@ public Inventaris_GUI() {
         jLabel35.setText("Posisi   :");
         JumlahKondisiSarana.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 90, 20));
 
-        JumlahCCTV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banyaknya", "-", "1", "2", "3", " " }));
+        JumlahCCTV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Banyaknya", "0", "1", "2", "3", " " }));
         JumlahCCTV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JumlahCCTVActionPerformed(evt);
@@ -790,14 +790,13 @@ public Inventaris_GUI() {
         id.setJumlahPintu(Integer.parseInt(JumlahPintu.getText()));
         id.setJumlahKursi(Integer.parseInt(JumlahKursi.getText()));
         id.setJumlahJendela(Integer.parseInt(JumlahJendela.getText()));
-        id.View();
         id.Luas();
         id.RasioLuas();
-        id.Save();
+        id.save();
+        id.View();
         
         JumlahKondisiSarana.setVisible(true);
-        Identitas.setVisible(false);
-            
+        Identitas.setVisible(false);     
     }//GEN-LAST:event_NextActionPerformed
          
     private void KondisiLCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KondisiLCDActionPerformed
@@ -839,7 +838,7 @@ public Inventaris_GUI() {
         stop.analisisKondisi();
         stop.analisisPosisi();
         stop.tampil();
-        stop.simpan();
+        stop.save();
         
         lcd.setJumlah(Integer.parseInt(JumlahLCD.getSelectedItem().toString()));
         lcd.setKondisi(KondisiLCD.getSelectedItem().toString());
@@ -848,7 +847,7 @@ public Inventaris_GUI() {
         lcd.analisisKondisi();
         lcd.analisisPosisi();
         lcd.Tampil();
-        lcd.Simpan();
+        lcd.save();
        
         kpas.setJumlah(Integer.parseInt(JumlahKipasAngin.getSelectedItem().toString()));
         kpas.setKondisi(KondisiKipasAngin.getSelectedItem().toString());
@@ -857,7 +856,7 @@ public Inventaris_GUI() {
         kpas.analisisKondisi();
         kpas.analisisPosisi();
         kpas.Tampil();
-        kpas.simpan();
+        kpas.save();
         
         lamp.setJumlah(Integer.parseInt(JumlahLampu.getSelectedItem().toString()));
         lamp.setKondisi(KondisiLampu.getSelectedItem().toString());
@@ -866,7 +865,7 @@ public Inventaris_GUI() {
         lamp.analisisKondisi();
         lamp.analisisPosisi();
         lamp.tampil();
-        lamp.simpan();
+        lamp.save();
         
         ace.setJumlah(Integer.parseInt(JumlahAC.getSelectedItem().toString()));
         ace.setKondisi(KondisiAC.getSelectedItem().toString());
@@ -884,13 +883,13 @@ public Inventaris_GUI() {
         cctv.analisisKondisi();
         cctv.analisisPosisi();
         cctv.tampil();
-        cctv.simpan();
+        cctv.save();
         
         net.setSSID(SSID.getSelectedItem().toString());
         net.setBandwidth(Integer.parseInt(Bandwidth.getSelectedItem().toString()));
         net.View();
         net.Analisa();
-        net.Save();
+        net.save();
         
         Lingkungan.setVisible(true);
         JumlahKondisiSarana.setVisible(false);
@@ -905,7 +904,7 @@ public Inventaris_GUI() {
         lingkung.setJendela(Jendela.getSelectedItem().toString());
         lingkung.View();
         lingkung.Analisa();
-        lingkung.Save();
+        lingkung.save();
         
         Kebersihan.setVisible(true);
         Lingkungan.setVisible(false);
@@ -919,7 +918,7 @@ public Inventaris_GUI() {
         bersih.setSuhuCel(Integer.parseInt(Suhu.getText()));
         bersih.View();
         bersih.Analisa();
-        bersih.Save();
+        bersih.save();
         
         Kenyamanan.setVisible(true);
         Kebersihan.setVisible(false);
@@ -934,7 +933,7 @@ public Inventaris_GUI() {
         enak.setKeausan(Keausan.getSelectedItem().toString());
         enak.View();
         enak.Analisa();
-        enak.Save();
+        enak.save();
         
         Keamanan.setVisible(true);
         Kenyamanan.setVisible(false);
@@ -947,7 +946,7 @@ public Inventaris_GUI() {
         aman.setBahaya(Bahaya.getSelectedItem().toString());
         aman.View();
         aman.Analisa();
-        aman.Save();
+        aman.save();
         JOptionPane.showMessageDialog(null, "Data Telah Tersimpan");
         
         Keamanan.setVisible(false);

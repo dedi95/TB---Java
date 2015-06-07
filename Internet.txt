@@ -1,1 +1,1 @@
-SSID : UMM HotspotBandwidth : 50
+Nama SSID : UMM HotspotBesar Bandwidth : 50

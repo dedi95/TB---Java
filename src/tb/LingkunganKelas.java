@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class LingkunganKelas extends KelasUtama{
     Scanner input = new Scanner(System.in);
-    String file = "Lingkungan.txt";
+//    String file = "Lingkungan.txt";
     private String Lantai;
     private String Dinding;
     private String Atap;
@@ -122,9 +122,25 @@ public class LingkunganKelas extends KelasUtama{
 			System.out.println("Kondisi Jendela TIDAK SESUAI");
 		}
         
-    }
+            }
     
-    public void Save(){
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("Lingkungan.txt");
+            ketik.write("Kondisi Lantai : "+getLantai());
+            ketik.write("Kondisi Dinding : "+getDinding());
+            ketik.write("Kondisi Atap : "+getAtap());
+            ketik.write("Kondisi Pintu : "+getPintu());
+            ketik.write("Kondisi Jendela : "+getJendela());
+            ketik.close();
+        }
+        catch (Exception b){
+            b.printStackTrace();
+        }
+    }        
+    
+    
+/*    public void Save(){
         try {
             ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("Kondisi Lantai : "+getLantai());
@@ -162,5 +178,5 @@ public class LingkunganKelas extends KelasUtama{
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }       */
 }

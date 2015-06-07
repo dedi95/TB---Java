@@ -1,1 +1,1 @@
-Jumlah Stop Kontak : 3Kondisi Stop Kontak : BaikPosisi Stop Kontak : Belakang
+Jumlah Stop Kontak : 2Kondisi Stop Kontak : BaikPosisi Stop Kontak : Depan

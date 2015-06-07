@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class KebersihanKelas extends KelasUtama {
     Scanner input = new Scanner(System.in);    
-    String file = "Kebersihan";
+//    String file = "Kebersihan";
     private String SirkulasiUdara;
     private int Pencahayaan;
     private int Kelembapan;
@@ -98,7 +98,22 @@ public class KebersihanKelas extends KelasUtama {
 	}
     }
     
-    public void Save(){
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("Kebersihan.txt");
+            ketik.write("Sirkulasi Udara : "+getSirkulasiUdara());
+            ketik.write("Pencahayaan : "+getPencahayaan());
+            ketik.write("Kelembapan : "+getKelembapan());
+            ketik.write("SuhuCel : "+getSuhuCel());
+            ketik.close();
+    }   
+        catch (Exception a){
+        a.printStackTrace();
+    }    
+}
+    
+    
+/*    public void Save(){
     try {
         ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
             ketik.writeObject("Sirkulasi Udara : "+getSirkulasiUdara());
@@ -134,5 +149,5 @@ public class KebersihanKelas extends KelasUtama {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }   */
 }

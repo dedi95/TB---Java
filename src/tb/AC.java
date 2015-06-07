@@ -9,10 +9,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 public class AC implements JumlahKondisiSarana {
     Scanner input = new Scanner(System.in);
+//    String file = "AC.txt"; 
     private int Jumlah;
     private String Kondisi;
     private String Posisi;
-    String file = "AC.txt"; 
     
     public int getJumlah() {
         return Jumlah;
@@ -82,6 +82,18 @@ public class AC implements JumlahKondisiSarana {
     }
     
     public void save(){
+        try {
+            FileWriter ketik = new FileWriter("AC.txt");
+            ketik.write("Jumlah AC : "+getJumlah());
+            ketik.write("Kondisi AC : "+getKondisi());
+            ketik.write("Posisi AC : "+getPosisi());
+            ketik.close();
+        }
+        catch (Exception a) {
+            a.printStackTrace();
+        }
+    
+/*    public void Save(){
 	try{
 	ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
 	ketik.writeObject("Jumlah AC : "+getJumlah());
@@ -115,5 +127,6 @@ public class AC implements JumlahKondisiSarana {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }   */
+}
 }

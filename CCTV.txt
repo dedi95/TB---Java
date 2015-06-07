@@ -1,1 +1,1 @@
-Jumlah CCTV : 1Kondisi CCTV : BaikPosisi CCTV : Atas
+Jumlah CCTV : 0Kondisi CCTV : Kurang BaikPosisi CCTV : Atas

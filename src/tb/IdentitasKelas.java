@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 
 public class IdentitasKelas {    
     Scanner input = new Scanner(System.in);
-    String file = "Identitas.txt";
+//    String file = "Identitas.txt";
     private String NamaRuangan;
     private String LokasiRuangan;
     private String Jurusan;
@@ -156,7 +156,29 @@ public class IdentitasKelas {
             return Luas()/getJumlahKursi();
         }   
     
-    public void Save(){
+    public void save(){
+        try {
+            FileWriter ketik = new FileWriter("Identitas.txt");
+            ketik.write("Nama Ruangan : "+getNamaRuangan());
+            ketik.write("Lokasi : "+getLokasiRuangan());
+            ketik.write("Jurusan : "+getJurusan());
+            ketik.write("Panjang : "+getPanjang());
+            ketik.write("Lebar : "+getLebar());
+            ketik.write("Jumlah Pintu : "+getJumlahPintu());
+            ketik.write("Jumlah Kursi : "+getJumlahKursi());
+            ketik.write("Jumlah Jendela : "+getJumlahJendela());
+            ketik.write("Luas : "+getLuas());
+            ketik.write("Rasio Luas : "+getRasioLuas());
+            ketik.close();
+        }
+        catch (Exception a) {
+            a.printStackTrace();
+        }
+            
+        
+    }
+    
+/*    public void Save(){
 	try{
 	ObjectOutputStream ketik = new ObjectOutputStream(new FileOutputStream(file));
 	ketik.writeObject("Nama Ruangan : "+getNamaRuangan());
@@ -172,14 +194,12 @@ public class IdentitasKelas {
         ketik.close();
     }
 	catch(FileNotFoundException e){
-            e.printStackTrace();
 	}
         catch(Exception e){
-            e.printStackTrace();
 	}
-    }
+    }       */
     
-    public void read(){
+/*    public void read(){
         try{
         ObjectInputStream baca = new ObjectInputStream(new FileInputStream(file));
         baca.readObject();
@@ -204,7 +224,7 @@ public class IdentitasKelas {
 	catch(IOException e){
             e.printStackTrace();
 	}
-    }
+    }   */
 }
         
     

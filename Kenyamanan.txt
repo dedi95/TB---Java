@@ -1,1 +1,1 @@
-Kebisingan : BisingBau : BauKebocoran : BocorKerusakan : Tidak RusakKeausan : Aus
+Kebisingan : BisingBau : Tidak BauKebocoran : Tidak BocorKerusakan : Tidak RusakKeausan : Aus
