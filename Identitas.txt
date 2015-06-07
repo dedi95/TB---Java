@@ -1,1 +1,1 @@
-Nama Ruangan : 4234Lokasi : fJurusan : sdfaPanjang : 2Lebar : 32Jumlah Pintu : 23Jumlah Kursi : 23Jumlah Jendela : 13
+Nama Ruangan : enamLokasi : GKB1Jurusan : MesinPanjang : 12Lebar : 10Jumlah Pintu : 2Jumlah Kursi : 3Jumlah Jendela : 2

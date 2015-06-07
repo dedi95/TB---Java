@@ -34,8 +34,8 @@ public class KabelLCD implements JumlahKondisiSarana {
 
     @Override
     public int analisisJumlah() {
-        System.out.println("Masukkan Jumlah Kabel LCD : ");
-		setJumlah(input.nextInt());
+/*        System.out.println("Masukkan Jumlah Kabel LCD : ");
+		setJumlah(input.nextInt()); */
 		if(getJumlah() >= 1){
 			return 1;
 		}
@@ -46,8 +46,8 @@ public class KabelLCD implements JumlahKondisiSarana {
 
     @Override
     public int analisisKondisi() {
-        System.out.println("Masukkan Kondisi Kabel LCD : ");
-		setKondisi(input.next());
+/*        System.out.println("Masukkan Kondisi Kabel LCD : ");
+		setKondisi(input.next());   */
 		if(getKondisi().equals("Berfungsi")){
 			return 1;
 		}
@@ -59,8 +59,8 @@ public class KabelLCD implements JumlahKondisiSarana {
 
     @Override
     public int analisisPosisi() {
-    System.out.println("Masukkan Posisi Kabel LCD : ");
-		setPosisi(input.next());
+/*        System.out.println("Masukkan Posisi Kabel LCD : ");
+		setPosisi(input.next());    */
 		if(getPosisi().equals("Dekat Dosen")){
 			return 1;
 		}
