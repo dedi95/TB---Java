@@ -78,7 +78,5 @@ public class TesKelas {
         stop.tampil();
         stop.save();       */         
         
-        System.out.println("Hasil  : ");
-        String Pilihan = input.next();
     }
 }
